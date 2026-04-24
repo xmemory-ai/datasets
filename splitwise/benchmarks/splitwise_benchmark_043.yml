@@ -1,0 +1,13 @@
+name: "Splitwise benchmark, single-answer accuracy with llm-as-a-judge"
+author: "DimaK"
+created_at: 2026-04-27
+dataset: ./splitwise_benchmark_043/dataset.yml
+
+metrics:
+  read:
+    - single_answer_accuracy_llm:
+        llm_judge_name: BEDROCK_ANTHROPIC_MINI
+
+thresholds:
+  read:
+    single_answer_accuracy_llm: 0.8

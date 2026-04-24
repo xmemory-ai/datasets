@@ -1,0 +1,10 @@
+[project]
+name = "eval-claude-memory-4"
+version = "0.1.0"
+description = "Splitwise-style data generation: step1_generate_outings_jsonl → step2_build_fulltest; step3_create_benchmark for benchmark bundles."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40",
+    "pydantic>=2",
+]

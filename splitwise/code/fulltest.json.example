@@ -1,0 +1,1511 @@
+{
+  "init_prompts": [
+    "This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing we record who participated, the total bill in dollars, and who paid the bill (one payer covering the full check). The accounting model is even-split: the total is divided equally among everyone who attended that outing, so the payer advanced the full amount and each other participant owes the payer their equal share of that bill. Whenever an expense message does not spell out exactly which subset attended, assume the full group of all 10 people participated. Outings at the same location or of the same type on different calendar dates are distinct outings and must never be merged. Later we will ask follow-up questions about balances or who owes what, grounded in this even-split rule.",
+    "This group has 10 members: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing we record who participated, the total bill in dollars, and who paid the full check. The total is split evenly among everyone who attended that outing—each attendee owes an equal share, so the payer advanced the full amount and each other participant owes the payer their fair portion of the bill. When an expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same place or of the same type on different dates are distinct and must never be merged. Later questions about balances or debts are grounded in this even-split model.",
+    "This agent tracks shared outings for a group of 10 friends: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who participated, the total bill in dollars, and who paid the full amount. The total is split evenly across everyone who attended that outing—each attendee owes an equal share, so the payer advanced the full bill and each other participant owes the payer their fair portion of that bill. When a later expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same location or of the same type on different calendar dates are distinct outings and must not be merged. Later we will ask follow-up questions about what people owe, grounded in this even-split model.",
+    "This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who attended, the total bill in dollars, and who paid. The total is split evenly across everyone who attended that specific outing; the payer advanced the full amount, so each other attendee owes the payer their equal share. If a later expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same venue or of the same type on different dates are distinct and must never be merged. Follow-up questions about balances or debts will use this even-split model.",
+    "This agent tracks shared expenses for a fixed group of 10 friends: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For every outing you report—whether a meal, activity, or other expense—record who attended, the total bill in dollars, and which one person paid the full check. The accounting model is straightforward: we split the total evenly across everyone who attended that particular outing, giving each participant an equal share; the payer advanced the entire amount, so each other attendee owes the payer their fair share of that bill. If a later expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same venue or of the same type on different dates are distinct events and must never be combined. Later you can ask follow-up questions about what anyone owes, and the agent will answer using this even-split rule.",
+    "This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who attended, the total bill in dollars, and who paid; the total is split evenly across everyone who attended that outing, so each attendee owes an equal share, and anyone who didn't pay owes the payer their portion. If a later expense message does not specify which subset attended, assume the full group of all 10 members participated. Outings at the same venue or of the same type on different dates are distinct events and must never be combined. Follow-up questions about balances or debts will be grounded in this even-split accounting model.",
+    "This agent tracks shared outings for a group of 10 friends: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing we record who attended, the total bill in dollars, and which one person paid the full check. The total is split evenly across everyone who attended that specific outing, so each attendee owes an equal share; the payer covered the entire amount up front, and each other participant owes the payer their fair portion of that bill—this even-split assumption is how we reason about obligations. If an expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same venue or of the same type on different dates are distinct events and must not be combined. Later questions will ask about balances or obligations based on this model.",
+    "This agent tracks shared expenses for a group of 10 friends: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who attended, the total bill in dollars, and who paid. The total is split evenly across everyone who attended that outing—the payer advanced the full amount, so each other participant owes the payer their equal share of that bill. If a later expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same location or of the same type on different dates are distinct and must never be merged. Follow-up questions about balances or what is owed will be grounded in this even-split rule.",
+    "This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For every outing, record who participated, the total bill in dollars, and who paid. The total is split evenly across everyone who attended that outing—the payer advanced the full amount, so each other participant owes the payer their equal share of that bill; this even-split rule is how we reason about who owes whom. If a later expense message does not spell out exactly which subset attended, assume the full group of all 10 people participated. Outings at the same location or of the same type on different calendar dates are distinct and must never be merged. Later questions about balances or debts will be grounded in this even-split accounting.",
+    "This agent tracks shared outings for a group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who participated, the total bill in dollars, and who paid the full check. The total is split evenly across everyone who attended that outing; the payer advanced the entire amount, so each other participant owes the payer their equal share of that bill. When an expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Outings at the same location or of the same type on different calendar dates are distinct and must never be merged. Later questions about balances or debts will be grounded in this even-split model."
+  ],
+  "events": [
+    {
+      "date_iso": "2026-01-15",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 160,
+      "payer": "Carlos",
+      "prompt": "On January 15, 2026, Amara, Amina, Carlos, Diego, Hiroshi, Leila, Priya, and Yuki enjoyed a Steakhouse dinner totaling $160, with Carlos picking up the tab."
+    },
+    {
+      "date_iso": "2026-01-16",
+      "type": "Mexican",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 280,
+      "payer": "Lars",
+      "prompt": "The following day, January 16, 2026, Amina, Carlos, Diego, Lars, Leila, Priya, and Yuki headed out for Mexican cuisine where the $280 bill was covered by Lars."
+    },
+    {
+      "date_iso": "2026-01-17",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 175,
+      "payer": "Fatima",
+      "prompt": "Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya gathered for Thai food on the 17th of January 2026, and Fatima took care of the $175 check."
+    },
+    {
+      "date_iso": "2026-01-18",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego"
+      ],
+      "total_usd": 135,
+      "payer": "Carlos",
+      "prompt": "On 1/18/2026, Amara, Carlos, and Diego went out for Vietnamese, with Carlos handling the $135 total."
+    },
+    {
+      "date_iso": "2026-01-19",
+      "type": "Indian",
+      "attendees": [
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 225,
+      "payer": "Carlos",
+      "prompt": "January nineteenth, twenty twenty-six saw Carlos, Fatima, Hiroshi, Priya, and Yuki dining on Indian food, where Carlos paid the $225 bill."
+    },
+    {
+      "date_iso": "2026-01-20",
+      "type": "Pizza",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Priya"
+      ],
+      "total_usd": 210,
+      "payer": "Priya",
+      "prompt": "Amara, Carlos, Fatima, Hiroshi, Lars, and Priya met for Pizza on January 20, 2026, and Priya picked up the $210 tab."
+    },
+    {
+      "date_iso": "2026-01-21",
+      "type": "Sushi",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 245,
+      "payer": "Lars",
+      "prompt": "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+    },
+    {
+      "date_iso": "2026-01-22",
+      "type": "Barbecue",
+      "attendees": [
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 175,
+      "payer": "Yuki",
+      "prompt": "Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki ventured out for Barbecue on January 22nd, 2026, where Yuki settled the $175 bill."
+    },
+    {
+      "date_iso": "2026-01-23",
+      "type": "Pizza",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Yuki"
+      ],
+      "total_usd": 75,
+      "payer": "Yuki",
+      "prompt": "On the twenty-third of January in 2026, Amara, Carlos, and Yuki grabbed Pizza, and Yuki took the $75 check."
+    },
+    {
+      "date_iso": "2026-01-24",
+      "type": "Sushi",
+      "attendees": [
+        "Hiroshi",
+        "Yuki"
+      ],
+      "total_usd": 120,
+      "payer": "Hiroshi",
+      "prompt": "Hiroshi and Yuki had Sushi together on 24 January 2026, with Hiroshi paying the $120 tab."
+    },
+    {
+      "date_iso": "2026-01-25",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Diego",
+        "Fatima",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 100,
+      "payer": "Priya",
+      "prompt": "January 25, 2026 found Amara, Diego, Fatima, Priya, and Yuki at a Vietnamese restaurant where Priya covered the $100 bill."
+    },
+    {
+      "date_iso": "2026-01-26",
+      "type": "Mexican",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Hiroshi",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Carlos",
+      "prompt": "On 1-26-2026, Amina, Carlos, Hiroshi, Leila, and Yuki dined on Mexican food, and Carlos handled the $200 expense."
+    },
+    {
+      "date_iso": "2026-01-27",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 330,
+      "payer": "Priya",
+      "prompt": "Amara, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Italian cuisine on January 27, 2026, with Priya picking up the $330 check."
+    },
+    {
+      "date_iso": "2026-01-28",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 385,
+      "payer": "Yuki",
+      "prompt": "The 28th day of January 2026 saw Amara, Amina, Carlos, Diego, Lars, Leila, and Yuki at an Italian restaurant, where Yuki paid the $385 total."
+    },
+    {
+      "date_iso": "2026-01-29",
+      "type": "Sushi",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 280,
+      "payer": "Yuki",
+      "prompt": "On January twenty-ninth, two thousand twenty-six, Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki went for Sushi, with Yuki covering the $280 bill."
+    },
+    {
+      "date_iso": "2026-01-30",
+      "type": "Barbecue",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 240,
+      "payer": "Diego",
+      "prompt": "Amina, Carlos, Diego, Fatima, Lars, and Yuki gathered for Barbecue on 30th January 2026, and Diego took care of the $240 tab."
+    },
+    {
+      "date_iso": "2026-01-31",
+      "type": "Barbecue",
+      "attendees": [
+        "Amina",
+        "Hiroshi",
+        "Priya"
+      ],
+      "total_usd": 150,
+      "payer": "Amina",
+      "prompt": "January 31, 2026 brought Amina, Hiroshi, and Priya together for Barbecue, where Amina settled the $150 check."
+    },
+    {
+      "date_iso": "2026-02-01",
+      "type": "Barbecue",
+      "attendees": [
+        "Amina",
+        "Fatima"
+      ],
+      "total_usd": 80,
+      "payer": "Fatima",
+      "prompt": "On the first of February 2026, Amina and Fatima enjoyed Barbecue with Fatima handling the $80 bill."
+    },
+    {
+      "date_iso": "2026-02-02",
+      "type": "Indian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 280,
+      "payer": "Hiroshi",
+      "prompt": "Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Priya dined on Indian food on February 2, 2026, and Hiroshi picked up the $280 tab."
+    },
+    {
+      "date_iso": "2026-02-03",
+      "type": "Italian",
+      "attendees": [
+        "Fatima",
+        "Hiroshi",
+        "Yuki"
+      ],
+      "total_usd": 105,
+      "payer": "Hiroshi",
+      "prompt": "February third, twenty twenty-six saw Fatima, Hiroshi, and Yuki at an Italian restaurant where Hiroshi paid the $105 total."
+    },
+    {
+      "date_iso": "2026-02-04",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 400,
+      "payer": "Yuki",
+      "prompt": "On 2/4/2026, Amara, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Italian cuisine, with Yuki covering the $400 bill."
+    },
+    {
+      "date_iso": "2026-02-05",
+      "type": "Indian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos"
+      ],
+      "total_usd": 90,
+      "payer": "Amina",
+      "prompt": "Amara, Amina, and Carlos met for Indian food on February 5, 2026, and Amina took the $90 check."
+    },
+    {
+      "date_iso": "2026-02-06",
+      "type": "Sushi",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Amina",
+      "prompt": "The sixth of February in 2026 found Amina, Carlos, Diego, Lars, and Yuki at a Sushi restaurant, where Amina settled the $200 tab."
+    },
+    {
+      "date_iso": "2026-02-07",
+      "type": "Italian",
+      "attendees": [
+        "Amina",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 210,
+      "payer": "Fatima",
+      "prompt": "On February 7th, 2026, Amina, Diego, Fatima, Hiroshi, Lars, Leila, and Priya gathered for Italian food, with Fatima picking up the $210 bill."
+    },
+    {
+      "date_iso": "2026-02-08",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 420,
+      "payer": "Diego",
+      "prompt": "Amina, Carlos, Diego, Fatima, Lars, Leila, and Yuki headed to a Steakhouse on February eighth, two thousand twenty-six, where Diego covered the $420 total."
+    },
+    {
+      "date_iso": "2026-02-09",
+      "type": "Mexican",
+      "attendees": [
+        "Carlos",
+        "Diego",
+        "Fatima"
+      ],
+      "total_usd": 180,
+      "payer": "Fatima",
+      "prompt": "Carlos, Diego, and Fatima enjoyed Mexican cuisine on 2-9-2026, with Fatima handling the $180 check."
+    },
+    {
+      "date_iso": "2026-02-10",
+      "type": "Sushi",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 100,
+      "payer": "Priya",
+      "prompt": "On the tenth day of February 2026, Amara, Amina, Diego, Priya, and Yuki went for Sushi, and Priya paid the $100 tab."
+    },
+    {
+      "date_iso": "2026-02-11",
+      "type": "Pizza",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 400,
+      "payer": "Leila",
+      "prompt": "February 11, 2026 saw Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki dining on Pizza, where Leila took care of the $400 bill."
+    },
+    {
+      "date_iso": "2026-02-12",
+      "type": "Ramen",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 150,
+      "payer": "Lars",
+      "prompt": "Amara, Carlos, Lars, Leila, and Priya met for Ramen on the 12th of February, 2026, with Lars covering the $150 total."
+    },
+    {
+      "date_iso": "2026-02-13",
+      "type": "Indian",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 420,
+      "payer": "Fatima",
+      "prompt": "On February thirteenth, twenty twenty-six, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Indian food, and Fatima picked up the $420 check."
+    },
+    {
+      "date_iso": "2026-02-14",
+      "type": "Thai",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 240,
+      "payer": "Amina",
+      "prompt": "Amina, Carlos, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki gathered for Thai cuisine on Valentine's Day 2026, where Amina settled the $240 tab."
+    },
+    {
+      "date_iso": "2026-02-15",
+      "type": "Ramen",
+      "attendees": [
+        "Diego",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 200,
+      "payer": "Diego",
+      "prompt": "Diego, Lars, Leila, and Priya dined on Ramen on February 15, 2026, with Diego handling the $200 bill."
+    },
+    {
+      "date_iso": "2026-02-16",
+      "type": "Thai",
+      "attendees": [
+        "Diego",
+        "Fatima"
+      ],
+      "total_usd": 60,
+      "payer": "Diego",
+      "prompt": "On 2/16/2026, Diego and Fatima went out for Thai food, and Diego covered the $60 total."
+    },
+    {
+      "date_iso": "2026-02-17",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 240,
+      "payer": "Amara",
+      "prompt": "Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya enjoyed Thai cuisine on February seventeenth, two thousand twenty-six, with Amara paying the $240 check."
+    },
+    {
+      "date_iso": "2026-02-18",
+      "type": "Barbecue",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 400,
+      "payer": "Amara",
+      "prompt": "The 18th of February 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki together for Barbecue, where Amara took the $400 tab."
+    },
+    {
+      "date_iso": "2026-02-19",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi"
+      ],
+      "total_usd": 210,
+      "payer": "Carlos",
+      "prompt": "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+    },
+    {
+      "date_iso": "2026-02-20",
+      "type": "Ramen",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Priya"
+      ],
+      "total_usd": 150,
+      "payer": "Diego",
+      "prompt": "Amara, Amina, Diego, Fatima, Hiroshi, and Priya met for Ramen on the twentieth day of February in 2026, and Diego covered the $150 total."
+    },
+    {
+      "date_iso": "2026-02-21",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 280,
+      "payer": "Leila",
+      "prompt": "February 21st, 2026 saw Amara, Amina, Carlos, Diego, Fatima, Lars, Leila, and Priya at an Italian restaurant, where Leila settled the $280 check."
+    },
+    {
+      "date_iso": "2026-02-22",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Lars",
+        "Priya"
+      ],
+      "total_usd": 160,
+      "payer": "Lars",
+      "prompt": "On 2-22-2026, Amara, Carlos, Lars, and Priya enjoyed Italian cuisine, with Lars handling the $160 tab."
+    },
+    {
+      "date_iso": "2026-02-23",
+      "type": "Ramen",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars"
+      ],
+      "total_usd": 175,
+      "payer": "Diego",
+      "prompt": "Amina, Carlos, Diego, Hiroshi, and Lars gathered for Ramen on February twenty-third, two thousand twenty-six, where Diego paid the $175 bill."
+    },
+    {
+      "date_iso": "2026-02-24",
+      "type": "Ramen",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Hiroshi",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 240,
+      "payer": "Amara",
+      "prompt": "The 24th of February 2026 found Amara, Amina, Diego, Hiroshi, Priya, and Yuki dining on Ramen, with Amara covering the $240 total."
+    },
+    {
+      "date_iso": "2026-02-25",
+      "type": "Pizza",
+      "attendees": [
+        "Diego",
+        "Yuki"
+      ],
+      "total_usd": 60,
+      "payer": "Diego",
+      "prompt": "On February 25, 2026, Diego and Yuki went for Pizza, and Diego picked up the $60 check."
+    },
+    {
+      "date_iso": "2026-02-26",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 210,
+      "payer": "Yuki",
+      "prompt": "Amara, Carlos, Hiroshi, Lars, Leila, and Yuki enjoyed Thai food on the twenty-sixth of February in 2026, with Yuki taking care of the $210 tab."
+    },
+    {
+      "date_iso": "2026-02-27",
+      "type": "Pizza",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 240,
+      "payer": "Fatima",
+      "prompt": "February 27th, 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, and Yuki together for Pizza, where Fatima settled the $240 bill."
+    },
+    {
+      "date_iso": "2026-02-28",
+      "type": "Vietnamese",
+      "attendees": [
+        "Carlos",
+        "Lars",
+        "Leila"
+      ],
+      "total_usd": 180,
+      "payer": "Leila",
+      "prompt": "On the last day of February 2026, Carlos, Lars, and Leila dined on Vietnamese cuisine, with Leila covering the $180 total."
+    },
+    {
+      "date_iso": "2026-03-01",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Hiroshi",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Amina",
+      "prompt": "Amara, Amina, Hiroshi, Lars, and Yuki met for Thai food on March 1, 2026, and Amina handled the $200 check."
+    },
+    {
+      "date_iso": "2026-03-02",
+      "type": "Thai",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 300,
+      "payer": "Yuki",
+      "prompt": "The second of March, twenty twenty-six saw Amina, Carlos, Diego, Lars, and Yuki at a Thai restaurant, where Yuki paid the $300 tab."
+    },
+    {
+      "date_iso": "2026-03-03",
+      "type": "Sushi",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 210,
+      "payer": "Leila",
+      "prompt": "On 3/3/2026, Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya enjoyed Sushi, with Leila picking up the $210 bill."
+    },
+    {
+      "date_iso": "2026-03-04",
+      "type": "Steakhouse",
+      "attendees": [
+        "Carlos",
+        "Hiroshi",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Priya",
+      "prompt": "March fourth, two thousand twenty-six found Carlos, Hiroshi, Priya, and Yuki dining at a Steakhouse, where Priya covered the $200 total."
+    },
+    {
+      "date_iso": "2026-03-05",
+      "type": "Mexican",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Priya"
+      ],
+      "total_usd": 330,
+      "payer": "Fatima",
+      "prompt": "On the fifth day of March in 2026, Amara, Amina, Fatima, Hiroshi, Lars, and Priya gathered for Mexican food, with Fatima taking the $330 check."
+    },
+    {
+      "date_iso": "2026-03-06",
+      "type": "Thai",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 400,
+      "payer": "Priya",
+      "prompt": "On March 6, 2026, Amara, Amina, Carlos, Fatima, Hiroshi, Leila, Priya, and Yuki enjoyed Thai cuisine together with a total bill of $400, and Priya picked up the tab."
+    },
+    {
+      "date_iso": "2026-03-07",
+      "type": "Indian",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Diego",
+      "prompt": "The group consisting of Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Indian food on the 7th of March 2026, spending $200 in total, with Diego covering the cost."
+    },
+    {
+      "date_iso": "2026-03-08",
+      "type": "Pizza",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars"
+      ],
+      "total_usd": 125,
+      "payer": "Carlos",
+      "prompt": "Amina, Carlos, Fatima, Hiroshi, and Lars shared pizza on March 8th, 2026, for a total of $125, which Carlos paid."
+    },
+    {
+      "date_iso": "2026-03-09",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 420,
+      "payer": "Priya",
+      "prompt": "On the ninth day of March in 2026, Amara, Carlos, Fatima, Hiroshi, Lars, Leila, and Priya dined at a steakhouse for $420, with Priya taking care of the bill."
+    },
+    {
+      "date_iso": "2026-03-10",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 420,
+      "payer": "Diego",
+      "prompt": "March 10, 2026 saw Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya enjoying Italian food totaling $420, and Diego footed the bill."
+    },
+    {
+      "date_iso": "2026-03-11",
+      "type": "Sushi",
+      "attendees": [
+        "Carlos",
+        "Yuki"
+      ],
+      "total_usd": 90,
+      "payer": "Carlos",
+      "prompt": "Carlos and Yuki went out for sushi on 3/11/2026, with the $90 check covered by Carlos."
+    },
+    {
+      "date_iso": "2026-03-12",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Priya"
+      ],
+      "total_usd": 320,
+      "payer": "Fatima",
+      "prompt": "On March twelfth, 2026, Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, and Priya visited a steakhouse where the $320 total was paid by Fatima."
+    },
+    {
+      "date_iso": "2026-03-13",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Yuki"
+      ],
+      "total_usd": 50,
+      "payer": "Yuki",
+      "prompt": "Amara and Yuki had a steakhouse dinner on the 13th of March, 2026, costing $50, which Yuki covered."
+    },
+    {
+      "date_iso": "2026-03-14",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 280,
+      "payer": "Leila",
+      "prompt": "The fourteenth of March 2026 found Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki at a Vietnamese restaurant with a $280 bill that Leila took care of."
+    },
+    {
+      "date_iso": "2026-03-15",
+      "type": "Mexican",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 100,
+      "payer": "Amara",
+      "prompt": "On March 15th in the year 2026, Amara, Amina, Lars, Leila, and Yuki enjoyed Mexican food for $100, with Amara paying the tab."
+    },
+    {
+      "date_iso": "2026-03-16",
+      "type": "Mexican",
+      "attendees": [
+        "Amara",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 150,
+      "payer": "Priya",
+      "prompt": "Amara, Priya, and Yuki dined on Mexican cuisine on 2026-03-16, spending $150 total, and Priya picked up the check."
+    },
+    {
+      "date_iso": "2026-03-17",
+      "type": "Italian",
+      "attendees": [
+        "Amina",
+        "Fatima",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 220,
+      "payer": "Lars",
+      "prompt": "March 17, 2026 brought Amina, Fatima, Lars, and Yuki together for Italian food totaling $220, which Lars paid for."
+    },
+    {
+      "date_iso": "2026-03-18",
+      "type": "Thai",
+      "attendees": [
+        "Carlos",
+        "Fatima"
+      ],
+      "total_usd": 60,
+      "payer": "Fatima",
+      "prompt": "On the eighteenth of March, 2026, Carlos and Fatima went out for Thai food costing $60, with Fatima covering it."
+    },
+    {
+      "date_iso": "2026-03-19",
+      "type": "Barbecue",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 240,
+      "payer": "Yuki",
+      "prompt": "Amara, Amina, Carlos, Hiroshi, Lars, Leila, Priya, and Yuki gathered for barbecue on March 19th, 2026, with a $240 total that Yuki took care of."
+    },
+    {
+      "date_iso": "2026-03-20",
+      "type": "Mexican",
+      "attendees": [
+        "Amara",
+        "Fatima"
+      ],
+      "total_usd": 70,
+      "payer": "Amara",
+      "prompt": "March 20, 2026 saw Amara and Fatima enjoying Mexican food for $70, and Amara paid the bill."
+    },
+    {
+      "date_iso": "2026-03-21",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 245,
+      "payer": "Amina",
+      "prompt": "On the twenty-first of March in 2026, Amara, Amina, Diego, Hiroshi, Lars, Priya, and Yuki had Vietnamese cuisine totaling $245, with Amina footing the bill."
+    },
+    {
+      "date_iso": "2026-03-22",
+      "type": "Sushi",
+      "attendees": [
+        "Amara",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 210,
+      "payer": "Fatima",
+      "prompt": "Amara, Diego, Fatima, Hiroshi, Leila, Priya, and Yuki went for sushi on March 22nd, 2026, spending $210 in total, which Fatima covered."
+    },
+    {
+      "date_iso": "2026-03-23",
+      "type": "Indian",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 240,
+      "payer": "Hiroshi",
+      "prompt": "The 23rd of March, 2026 found Amara, Carlos, Fatima, Hiroshi, Leila, and Priya at an Indian restaurant where Hiroshi paid the $240 bill."
+    },
+    {
+      "date_iso": "2026-03-24",
+      "type": "Sushi",
+      "attendees": [
+        "Amina",
+        "Diego",
+        "Hiroshi",
+        "Leila"
+      ],
+      "total_usd": 180,
+      "payer": "Amina",
+      "prompt": "On March 24, 2026, Amina, Diego, Hiroshi, and Leila enjoyed sushi for $180, with Amina picking up the tab."
+    },
+    {
+      "date_iso": "2026-03-25",
+      "type": "Barbecue",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 245,
+      "payer": "Lars",
+      "prompt": "Amara, Carlos, Diego, Fatima, Lars, Priya, and Yuki had barbecue on the twenty-fifth of March 2026, totaling $245, and Lars took the check."
+    },
+    {
+      "date_iso": "2026-03-26",
+      "type": "Sushi",
+      "attendees": [
+        "Amara",
+        "Amina"
+      ],
+      "total_usd": 90,
+      "payer": "Amara",
+      "prompt": "March 26th, 2026 brought Amara and Amina together for sushi costing $90, which Amara paid."
+    },
+    {
+      "date_iso": "2026-03-27",
+      "type": "Italian",
+      "attendees": [
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 245,
+      "payer": "Carlos",
+      "prompt": "On 3/27/2026, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki dined on Italian food for $245, with Carlos covering the cost."
+    },
+    {
+      "date_iso": "2026-03-28",
+      "type": "Pizza",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars"
+      ],
+      "total_usd": 125,
+      "payer": "Amina",
+      "prompt": "The twenty-eighth of March in 2026 saw Amina, Carlos, Diego, Fatima, and Lars sharing pizza for $125, and Amina paid the bill."
+    },
+    {
+      "date_iso": "2026-03-29",
+      "type": "Ramen",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 175,
+      "payer": "Carlos",
+      "prompt": "March 29, 2026 found Amina, Carlos, Diego, Priya, and Yuki at a ramen restaurant with a $175 total that Carlos took care of."
+    },
+    {
+      "date_iso": "2026-03-30",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 315,
+      "payer": "Leila",
+      "prompt": "On the thirtieth day of March 2026, Amara, Amina, Diego, Hiroshi, Lars, Leila, and Yuki enjoyed Vietnamese food totaling $315, with Leila footing the bill."
+    },
+    {
+      "date_iso": "2026-03-31",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 440,
+      "payer": "Lars",
+      "prompt": "March 31st, 2026 brought Amara, Amina, Diego, Hiroshi, Lars, Leila, Priya, and Yuki to a steakhouse for $440, which Lars covered."
+    },
+    {
+      "date_iso": "2026-04-01",
+      "type": "Barbecue",
+      "attendees": [
+        "Lars",
+        "Leila"
+      ],
+      "total_usd": 80,
+      "payer": "Lars",
+      "prompt": "Lars and Leila went out for barbecue on April 1, 2026, spending $80, and Lars picked up the check."
+    },
+    {
+      "date_iso": "2026-04-02",
+      "type": "Ramen",
+      "attendees": [
+        "Carlos",
+        "Hiroshi",
+        "Leila"
+      ],
+      "total_usd": 90,
+      "payer": "Carlos",
+      "prompt": "On the second of April 2026, Carlos, Hiroshi, and Leila had ramen costing $90, with Carlos paying the tab."
+    },
+    {
+      "date_iso": "2026-04-03",
+      "type": "Sushi",
+      "attendees": [
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 385,
+      "payer": "Carlos",
+      "prompt": "April 3rd, 2026 saw Carlos, Diego, Hiroshi, Lars, Leila, Priya, and Yuki enjoying sushi for $385, which Carlos took care of."
+    },
+    {
+      "date_iso": "2026-04-04",
+      "type": "Mexican",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Yuki"
+      ],
+      "total_usd": 175,
+      "payer": "Diego",
+      "prompt": "On 4/4/2026, Amina, Carlos, Diego, Fatima, and Yuki dined on Mexican food totaling $175, and Diego covered it."
+    },
+    {
+      "date_iso": "2026-04-05",
+      "type": "Barbecue",
+      "attendees": [
+        "Amara",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Leila"
+      ],
+      "total_usd": 250,
+      "payer": "Hiroshi",
+      "prompt": "The fifth of April in 2026 found Amara, Diego, Fatima, Hiroshi, and Leila at a barbecue restaurant where Hiroshi paid the $250 bill."
+    },
+    {
+      "date_iso": "2026-04-06",
+      "type": "Indian",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 275,
+      "payer": "Lars",
+      "prompt": "April 6, 2026 brought Amina, Carlos, Lars, Leila, and Priya together for Indian cuisine costing $275, which Lars footed."
+    },
+    {
+      "date_iso": "2026-04-07",
+      "type": "Sushi",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 350,
+      "payer": "Fatima",
+      "prompt": "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+    },
+    {
+      "date_iso": "2026-04-08",
+      "type": "Italian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 225,
+      "payer": "Amina",
+      "prompt": "Amara, Amina, Leila, Priya, and Yuki enjoyed Italian food on April 8th, 2026, spending $225, and Amina covered the check."
+    },
+    {
+      "date_iso": "2026-04-09",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Lars",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 210,
+      "payer": "Yuki",
+      "prompt": "The ninth of April 2026 saw Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki at a steakhouse for $210, which Yuki paid."
+    },
+    {
+      "date_iso": "2026-04-10",
+      "type": "Indian",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 280,
+      "payer": "Leila",
+      "prompt": "On April 10, 2026, Amara, Amina, Fatima, Hiroshi, Leila, Priya, and Yuki dined on Indian cuisine totaling $280, with Leila taking care of it."
+    },
+    {
+      "date_iso": "2026-04-11",
+      "type": "Pizza",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 400,
+      "payer": "Diego",
+      "prompt": "April 11th, 2026 found Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya sharing pizza for $400, and Diego footed the bill."
+    },
+    {
+      "date_iso": "2026-04-12",
+      "type": "Pizza",
+      "attendees": [
+        "Hiroshi",
+        "Lars",
+        "Priya"
+      ],
+      "total_usd": 120,
+      "payer": "Lars",
+      "prompt": "On the twelfth of April in 2026, Hiroshi, Lars, and Priya had pizza costing $120, which Lars covered."
+    },
+    {
+      "date_iso": "2026-04-13",
+      "type": "Mexican",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 385,
+      "payer": "Fatima",
+      "prompt": "Amara, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Mexican food on April 13, 2026, with a $385 total that Fatima paid."
+    },
+    {
+      "date_iso": "2026-04-14",
+      "type": "Steakhouse",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Carlos",
+        "Fatima",
+        "Hiroshi",
+        "Yuki"
+      ],
+      "total_usd": 180,
+      "payer": "Fatima",
+      "prompt": "The fourteenth day of April 2026 brought Amara, Amina, Carlos, Fatima, Hiroshi, and Yuki to a steakhouse where Fatima picked up the $180 check."
+    },
+    {
+      "date_iso": "2026-04-15",
+      "type": "Barbecue",
+      "attendees": [
+        "Amara",
+        "Amina",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Yuki"
+      ],
+      "total_usd": 180,
+      "payer": "Fatima",
+      "prompt": "On 4/15/2026, Amara, Amina, Diego, Fatima, Lars, and Yuki enjoyed barbecue totaling $180, with Fatima taking the tab."
+    },
+    {
+      "date_iso": "2026-04-16",
+      "type": "Sushi",
+      "attendees": [
+        "Diego",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 165,
+      "payer": "Diego",
+      "prompt": "April 16th, 2026 saw Diego, Leila, and Yuki dining on sushi for $165, which Diego covered."
+    },
+    {
+      "date_iso": "2026-04-17",
+      "type": "Pizza",
+      "attendees": [
+        "Diego",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 200,
+      "payer": "Leila",
+      "prompt": "On the seventeenth of April 2026, Diego, Lars, Leila, and Priya had pizza costing $200, and Leila paid the bill."
+    },
+    {
+      "date_iso": "2026-04-18",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Priya"
+      ],
+      "total_usd": 385,
+      "payer": "Hiroshi",
+      "prompt": "Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya went for Vietnamese food on April 18, 2026, spending $385 total, with Hiroshi footing it."
+    },
+    {
+      "date_iso": "2026-04-19",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Diego"
+      ],
+      "total_usd": 90,
+      "payer": "Diego",
+      "prompt": "The nineteenth day of April in 2026 found Amara and Diego at a Vietnamese restaurant where Diego covered the $90 bill."
+    },
+    {
+      "date_iso": "2026-04-20",
+      "type": "Ramen",
+      "attendees": [
+        "Amara",
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Hiroshi",
+        "Lars",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 200,
+      "payer": "Fatima",
+      "prompt": "On April 20th, 2026, Amara, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki enjoyed ramen totaling $200, which Fatima paid."
+    },
+    {
+      "date_iso": "2026-04-21",
+      "type": "Pizza",
+      "attendees": [
+        "Carlos",
+        "Hiroshi",
+        "Lars"
+      ],
+      "total_usd": 135,
+      "payer": "Lars",
+      "prompt": "April 21, 2026 brought Carlos, Hiroshi, and Lars together for pizza costing $135, and Lars picked up the check."
+    },
+    {
+      "date_iso": "2026-04-22",
+      "type": "Vietnamese",
+      "attendees": [
+        "Carlos",
+        "Diego",
+        "Fatima",
+        "Lars",
+        "Priya",
+        "Yuki"
+      ],
+      "total_usd": 150,
+      "payer": "Fatima",
+      "prompt": "On the twenty-second of April 2026, Carlos, Diego, Fatima, Lars, Priya, and Yuki dined on Vietnamese food for $150, with Fatima taking care of it."
+    },
+    {
+      "date_iso": "2026-04-23",
+      "type": "Italian",
+      "attendees": [
+        "Carlos",
+        "Hiroshi",
+        "Lars"
+      ],
+      "total_usd": 150,
+      "payer": "Lars",
+      "prompt": "Carlos, Hiroshi, and Lars went out for Italian on April 23rd, 2026, spending $150 total, which Lars covered."
+    },
+    {
+      "date_iso": "2026-04-24",
+      "type": "Vietnamese",
+      "attendees": [
+        "Amara",
+        "Diego",
+        "Hiroshi",
+        "Leila",
+        "Yuki"
+      ],
+      "total_usd": 100,
+      "payer": "Amara",
+      "prompt": "The final outing on April 24, 2026 saw Amara, Diego, Hiroshi, Leila, and Yuki enjoying Vietnamese cuisine for $100, with Amara footing the bill."
+    }
+  ],
+  "queries": {
+    "Amara": [
+      "What is Amara's current balance in dollars, where a positive number means she is owed money by the group and a negative number means she owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "How much money does Amara owe to the group or is owed by the group in dollars (negative if she owes, positive if she's owed)?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Amara's balance, with positive meaning the group owes her and negative meaning she owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Amina": [
+      "How much money in dollars is Amina owed by the group, or does she owe the group (positive if she's owed, negative if she owes)?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Amina's exact balance in dollars right now, where a positive number means the group owes her and a negative number means she owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Amina's current balance, with positive meaning she's owed money and negative meaning she owes money?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Carlos": [
+      "How much money in dollars is Carlos owed by the group, or does he owe money to the group? Please give the exact balance where positive means he's owed money and negative means he owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Carlos's current balance in dollars in the shared expense tracker, using the convention that a positive number means the group owes him and a negative number means he owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars does Carlos's balance show right now, where being owed money by the group is positive, owing money to the group is negative, and zero means settled up?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Diego": [
+      "How much money in dollars is Diego owed by the group, or does Diego owe the group instead? Use positive if Diego is owed money, negative if Diego owes money, and zero if settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Diego's exact balance in dollars right now? Remember that a positive number means the group owes Diego, a negative number means Diego owes the group, and zero means all even.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Diego's current balance, where positive means Diego is owed money by the group and negative means Diego owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Fatima": [
+      "How much money is Fatima owed by the group, or does she owe money to them? Please give the exact dollar balance where positive means she's owed money and negative means she owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Fatima's current balance in dollars in the shared expense tracker, using the convention that a positive number means the group owes her and a negative number means she owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars does Fatima's balance show right now? Remember, if it's positive the group owes her, if it's negative she owes the group, and zero means settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Hiroshi": [
+      "What is Hiroshi's balance in dollars, where a positive number means the group owes him and a negative number means he owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "How much money does Hiroshi need to pay or receive to settle up, with positive meaning he's owed money and negative meaning he owes money?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Hiroshi's current balance, using the convention that positive means others owe him and negative means he owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Lars": [
+      "What is Lars's current balance in dollars, where a positive number means the group owes Lars and a negative number means Lars owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "How much money in dollars does Lars have as a balance right now, with positive meaning Lars is owed money and negative meaning Lars owes money?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Lars's balance, using the convention that positive means others owe Lars and negative means Lars owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Leila": [
+      "How much is Leila's balance in dollars, where positive means she's owed money and negative means she owes?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Leila's exact balance? Remember, if it's positive the group owes her, if negative she owes the group.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Exactly how many dollars is Leila's current balance, with positive indicating she's owed and negative indicating she owes?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Priya": [
+      "How much money is Priya owed by the group, or does she owe money to the group? Please give her exact balance in dollars, where a positive number means she's owed money and a negative number means she owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Priya's current balance in dollars in the shared expense tracker? Remember, if it's positive the group owes her, if it's negative she owes the group, and zero means she's settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Can you tell me exactly how many dollars Priya's balance is? A positive balance means the group owes Priya money, while a negative balance means Priya owes the group money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ],
+    "Yuki": [
+      "How much is Yuki's balance in dollars, where a positive number means the group owes Yuki and a negative number means Yuki owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "What's Yuki's exact balance in the expense tracker? Please give the dollar amount, with positive meaning Yuki is owed money and negative meaning Yuki owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer.",
+      "Can you tell me Yuki's current balance as a specific dollar figure? Remember that positive means the group owes Yuki, negative means Yuki owes the group, and zero means settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    ]
+  }
+}

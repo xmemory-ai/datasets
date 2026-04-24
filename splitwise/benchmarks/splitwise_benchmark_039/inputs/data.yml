@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya gathered for Thai food on the 17th of January 2026, and Fatima took care of the $175 check."
+
+- write:
+    query: "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+
+- write:
+    query: "The sixth of February in 2026 found Amina, Carlos, Diego, Lars, and Yuki at a Sushi restaurant, where Amina settled the $200 tab."
+
+- write:
+    query: "Amina, Carlos, Diego, Fatima, Lars, Leila, and Yuki headed to a Steakhouse on February eighth, two thousand twenty-six, where Diego covered the $420 total."
+
+- write:
+    query: "February 11, 2026 saw Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki dining on Pizza, where Leila took care of the $400 bill."
+
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya enjoyed Thai cuisine on February seventeenth, two thousand twenty-six, with Amara paying the $240 check."
+
+- write:
+    query: "On the twenty-first of March in 2026, Amara, Amina, Diego, Hiroshi, Lars, Priya, and Yuki had Vietnamese cuisine totaling $245, with Amina footing the bill."
+
+- write:
+    query: "The twenty-eighth of March in 2026 saw Amina, Carlos, Diego, Fatima, and Lars sharing pizza for $125, and Amina paid the bill."
+
+- write:
+    query: "April 6, 2026 brought Amina, Carlos, Lars, Leila, and Priya together for Indian cuisine costing $275, which Lars footed."
+
+- write:
+    query: "On 4/15/2026, Amara, Amina, Diego, Fatima, Lars, and Yuki enjoyed barbecue totaling $180, with Fatima taking the tab."
+
+- read:
+    query: "How much money in dollars is Amina owed by the group, or does she owe the group (positive if she's owed, negative if she owes)?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "185"

@@ -1,0 +1,34 @@
+- write:
+    query: "The following day, January 16, 2026, Amina, Carlos, Diego, Lars, Leila, Priya, and Yuki headed out for Mexican cuisine where the $280 bill was covered by Lars."
+
+- write:
+    query: "On January twenty-ninth, two thousand twenty-six, Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki went for Sushi, with Yuki covering the $280 bill."
+
+- write:
+    query: "Amara, Amina, and Carlos met for Indian food on February 5, 2026, and Amina took the $90 check."
+
+- write:
+    query: "The sixth of February in 2026 found Amina, Carlos, Diego, Lars, and Yuki at a Sushi restaurant, where Amina settled the $200 tab."
+
+- write:
+    query: "Amina, Carlos, Diego, Fatima, Lars, Leila, and Yuki headed to a Steakhouse on February eighth, two thousand twenty-six, where Diego covered the $420 total."
+
+- write:
+    query: "Amina, Carlos, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki gathered for Thai cuisine on Valentine's Day 2026, where Amina settled the $240 tab."
+
+- write:
+    query: "February 27th, 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, and Yuki together for Pizza, where Fatima settled the $240 bill."
+
+- write:
+    query: "March fourth, two thousand twenty-six found Carlos, Hiroshi, Priya, and Yuki dining at a Steakhouse, where Priya covered the $200 total."
+
+- write:
+    query: "The twenty-eighth of March in 2026 saw Amina, Carlos, Diego, Fatima, and Lars sharing pizza for $125, and Amina paid the bill."
+
+- write:
+    query: "Carlos, Hiroshi, and Lars went out for Italian on April 23rd, 2026, spending $150 total, which Lars covered."
+
+- read:
+    query: "How much money in dollars is Carlos owed by the group, or does he owe money to the group? Please give the exact balance where positive means he's owed money and negative means he owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-400"

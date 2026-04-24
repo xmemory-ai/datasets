@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya gathered for Thai food on the 17th of January 2026, and Fatima took care of the $175 check."
+
+- write:
+    query: "January nineteenth, twenty twenty-six saw Carlos, Fatima, Hiroshi, Priya, and Yuki dining on Indian food, where Carlos paid the $225 bill."
+
+- write:
+    query: "On the twenty-third of January in 2026, Amara, Carlos, and Yuki grabbed Pizza, and Yuki took the $75 check."
+
+- write:
+    query: "On 2/4/2026, Amara, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Italian cuisine, with Yuki covering the $400 bill."
+
+- write:
+    query: "The sixth of February in 2026 found Amina, Carlos, Diego, Lars, and Yuki at a Sushi restaurant, where Amina settled the $200 tab."
+
+- write:
+    query: "Amina, Carlos, Diego, Hiroshi, and Lars gathered for Ramen on February twenty-third, two thousand twenty-six, where Diego paid the $175 bill."
+
+- write:
+    query: "Amara, Carlos, Diego, Fatima, Lars, Priya, and Yuki had barbecue on the twenty-fifth of March 2026, totaling $245, and Lars took the check."
+
+- write:
+    query: "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+
+- write:
+    query: "April 11th, 2026 found Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya sharing pizza for $400, and Diego footed the bill."
+
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Mexican food on April 13, 2026, with a $385 total that Fatima paid."
+
+- read:
+    query: "Exactly how many dollars does Carlos's balance show right now, where being owed money by the group is positive, owing money to the group is negative, and zero means settled up?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-185"

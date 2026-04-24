@@ -1,0 +1,34 @@
+- write:
+    query: "The following day, January 16, 2026, Amina, Carlos, Diego, Lars, Leila, Priya, and Yuki headed out for Mexican cuisine where the $280 bill was covered by Lars."
+
+- write:
+    query: "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+
+- write:
+    query: "Amina, Carlos, Diego, Hiroshi, and Lars gathered for Ramen on February twenty-third, two thousand twenty-six, where Diego paid the $175 bill."
+
+- write:
+    query: "The second of March, twenty twenty-six saw Amina, Carlos, Diego, Lars, and Yuki at a Thai restaurant, where Yuki paid the $300 tab."
+
+- write:
+    query: "On 3/3/2026, Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya enjoyed Sushi, with Leila picking up the $210 bill."
+
+- write:
+    query: "March 10, 2026 saw Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya enjoying Italian food totaling $420, and Diego footed the bill."
+
+- write:
+    query: "March 29, 2026 found Amina, Carlos, Diego, Priya, and Yuki at a ramen restaurant with a $175 total that Carlos took care of."
+
+- write:
+    query: "March 31st, 2026 brought Amara, Amina, Diego, Hiroshi, Lars, Leila, Priya, and Yuki to a steakhouse for $440, which Lars covered."
+
+- write:
+    query: "On 4/15/2026, Amara, Amina, Diego, Fatima, Lars, and Yuki enjoyed barbecue totaling $180, with Fatima taking the tab."
+
+- write:
+    query: "On April 20th, 2026, Amara, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki enjoyed ramen totaling $200, which Fatima paid."
+
+- read:
+    query: "Exactly how many dollars is Diego's current balance, where positive means Diego is owed money by the group and negative means Diego owes the group?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "190"

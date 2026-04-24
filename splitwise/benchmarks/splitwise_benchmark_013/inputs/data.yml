@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Italian cuisine on January 27, 2026, with Priya picking up the $330 check."
+
+- write:
+    query: "Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Priya dined on Indian food on February 2, 2026, and Hiroshi picked up the $280 tab."
+
+- write:
+    query: "Diego, Lars, Leila, and Priya dined on Ramen on February 15, 2026, with Diego handling the $200 bill."
+
+- write:
+    query: "Amara, Amina, Hiroshi, Lars, and Yuki met for Thai food on March 1, 2026, and Amina handled the $200 check."
+
+- write:
+    query: "March 17, 2026 brought Amina, Fatima, Lars, and Yuki together for Italian food totaling $220, which Lars paid for."
+
+- write:
+    query: "Amara, Amina, Carlos, Hiroshi, Lars, Leila, Priya, and Yuki gathered for barbecue on March 19th, 2026, with a $240 total that Yuki took care of."
+
+- write:
+    query: "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+
+- write:
+    query: "The ninth of April 2026 saw Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki at a steakhouse for $210, which Yuki paid."
+
+- write:
+    query: "Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya went for Vietnamese food on April 18, 2026, spending $385 total, with Hiroshi footing it."
+
+- write:
+    query: "On the twenty-second of April 2026, Carlos, Diego, Fatima, Lars, Priya, and Yuki dined on Vietnamese food for $150, with Fatima taking care of it."
+
+- read:
+    query: "Exactly how many dollars is Lars's balance, using the convention that positive means others owe Lars and negative means Lars owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-205"

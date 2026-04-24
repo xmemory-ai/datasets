@@ -1,0 +1,34 @@
+- write:
+    query: "On the first of February 2026, Amina and Fatima enjoyed Barbecue with Fatima handling the $80 bill."
+
+- write:
+    query: "February 11, 2026 saw Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki dining on Pizza, where Leila took care of the $400 bill."
+
+- write:
+    query: "On February thirteenth, twenty twenty-six, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Indian food, and Fatima picked up the $420 check."
+
+- write:
+    query: "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+
+- write:
+    query: "Amara, Amina, Diego, Fatima, Hiroshi, and Priya met for Ramen on the twentieth day of February in 2026, and Diego covered the $150 total."
+
+- write:
+    query: "The group consisting of Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Indian food on the 7th of March 2026, spending $200 in total, with Diego covering the cost."
+
+- write:
+    query: "March 17, 2026 brought Amina, Fatima, Lars, and Yuki together for Italian food totaling $220, which Lars paid for."
+
+- write:
+    query: "March 26th, 2026 brought Amara and Amina together for sushi costing $90, which Amara paid."
+
+- write:
+    query: "April 6, 2026 brought Amina, Carlos, Lars, Leila, and Priya together for Indian cuisine costing $275, which Lars footed."
+
+- write:
+    query: "Amara, Amina, Leila, Priya, and Yuki enjoyed Italian food on April 8th, 2026, spending $225, and Amina covered the check."
+
+- read:
+    query: "How much money in dollars is Amina owed by the group, or does she owe the group (positive if she's owed, negative if she owes)?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-210"

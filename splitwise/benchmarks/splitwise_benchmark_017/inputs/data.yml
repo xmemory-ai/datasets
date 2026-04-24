@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya gathered for Thai food on the 17th of January 2026, and Fatima took care of the $175 check."
+
+- write:
+    query: "On February thirteenth, twenty twenty-six, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Indian food, and Fatima picked up the $420 check."
+
+- write:
+    query: "February 21st, 2026 saw Amara, Amina, Carlos, Diego, Fatima, Lars, Leila, and Priya at an Italian restaurant, where Leila settled the $280 check."
+
+- write:
+    query: "Amina, Carlos, Fatima, Hiroshi, and Lars shared pizza on March 8th, 2026, for a total of $125, which Carlos paid."
+
+- write:
+    query: "On March twelfth, 2026, Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, and Priya visited a steakhouse where the $320 total was paid by Fatima."
+
+- write:
+    query: "March 17, 2026 brought Amina, Fatima, Lars, and Yuki together for Italian food totaling $220, which Lars paid for."
+
+- write:
+    query: "Amara, Diego, Fatima, Hiroshi, Leila, Priya, and Yuki went for sushi on March 22nd, 2026, spending $210 in total, which Fatima covered."
+
+- write:
+    query: "On 3/27/2026, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki dined on Italian food for $245, with Carlos covering the cost."
+
+- write:
+    query: "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Mexican food on April 13, 2026, with a $385 total that Fatima paid."
+
+- read:
+    query: "How much money is Fatima owed by the group, or does she owe money to them? Please give the exact dollar balance where positive means she's owed money and negative means she owes money.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "1450"

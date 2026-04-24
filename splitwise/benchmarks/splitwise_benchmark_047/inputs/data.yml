@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Lars, and Priya met for Pizza on January 20, 2026, and Priya picked up the $210 tab."
+
+- write:
+    query: "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+
+- write:
+    query: "On 2/4/2026, Amara, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Italian cuisine, with Yuki covering the $400 bill."
+
+- write:
+    query: "Carlos, Diego, and Fatima enjoyed Mexican cuisine on 2-9-2026, with Fatima handling the $180 check."
+
+- write:
+    query: "On February thirteenth, twenty twenty-six, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Indian food, and Fatima picked up the $420 check."
+
+- write:
+    query: "On 2/16/2026, Diego and Fatima went out for Thai food, and Diego covered the $60 total."
+
+- write:
+    query: "Amina, Carlos, Fatima, Hiroshi, and Lars shared pizza on March 8th, 2026, for a total of $125, which Carlos paid."
+
+- write:
+    query: "March 20, 2026 saw Amara and Fatima enjoying Mexican food for $70, and Amara paid the bill."
+
+- write:
+    query: "The 23rd of March, 2026 found Amara, Carlos, Fatima, Hiroshi, Leila, and Priya at an Indian restaurant where Hiroshi paid the $240 bill."
+
+- write:
+    query: "The twenty-eighth of March in 2026 saw Amina, Carlos, Diego, Fatima, and Lars sharing pizza for $125, and Amina paid the bill."
+
+- read:
+    query: "Exactly how many dollars does Fatima's balance show right now? Remember, if it's positive the group owes her, if it's negative she owes the group, and zero means settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "205"

@@ -1,0 +1,34 @@
+- write:
+    query: "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+
+- write:
+    query: "Amara, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Italian cuisine on January 27, 2026, with Priya picking up the $330 check."
+
+- write:
+    query: "The 28th day of January 2026 saw Amara, Amina, Carlos, Diego, Lars, Leila, and Yuki at an Italian restaurant, where Yuki paid the $385 total."
+
+- write:
+    query: "On 2/4/2026, Amara, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Italian cuisine, with Yuki covering the $400 bill."
+
+- write:
+    query: "February 21st, 2026 saw Amara, Amina, Carlos, Diego, Fatima, Lars, Leila, and Priya at an Italian restaurant, where Leila settled the $280 check."
+
+- write:
+    query: "The second of March, twenty twenty-six saw Amina, Carlos, Diego, Lars, and Yuki at a Thai restaurant, where Yuki paid the $300 tab."
+
+- write:
+    query: "Amara, Amina, Carlos, Hiroshi, Lars, Leila, Priya, and Yuki gathered for barbecue on March 19th, 2026, with a $240 total that Yuki took care of."
+
+- write:
+    query: "On 3/27/2026, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki dined on Italian food for $245, with Carlos covering the cost."
+
+- write:
+    query: "On the thirtieth day of March 2026, Amara, Amina, Diego, Hiroshi, Lars, Leila, and Yuki enjoyed Vietnamese food totaling $315, with Leila footing the bill."
+
+- write:
+    query: "On the twenty-second of April 2026, Carlos, Diego, Fatima, Lars, Priya, and Yuki dined on Vietnamese food for $150, with Fatima taking care of it."
+
+- read:
+    query: "Exactly how many dollars is Lars's balance, using the convention that positive means others owe Lars and negative means Lars owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-180"

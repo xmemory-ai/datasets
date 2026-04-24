@@ -1,0 +1,34 @@
+- write:
+    query: "January 25, 2026 found Amara, Diego, Fatima, Priya, and Yuki at a Vietnamese restaurant where Priya covered the $100 bill."
+
+- write:
+    query: "On February 7th, 2026, Amina, Diego, Fatima, Hiroshi, Lars, Leila, and Priya gathered for Italian food, with Fatima picking up the $210 bill."
+
+- write:
+    query: "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+
+- write:
+    query: "Amara, Amina, Diego, Fatima, Hiroshi, and Priya met for Ramen on the twentieth day of February in 2026, and Diego covered the $150 total."
+
+- write:
+    query: "February 21st, 2026 saw Amara, Amina, Carlos, Diego, Fatima, Lars, Leila, and Priya at an Italian restaurant, where Leila settled the $280 check."
+
+- write:
+    query: "The 24th of February 2026 found Amara, Amina, Diego, Hiroshi, Priya, and Yuki dining on Ramen, with Amara covering the $240 total."
+
+- write:
+    query: "On 3/3/2026, Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya enjoyed Sushi, with Leila picking up the $210 bill."
+
+- write:
+    query: "On the thirtieth day of March 2026, Amara, Amina, Diego, Hiroshi, Lars, Leila, and Yuki enjoyed Vietnamese food totaling $315, with Leila footing the bill."
+
+- write:
+    query: "April 3rd, 2026 saw Carlos, Diego, Hiroshi, Lars, Leila, Priya, and Yuki enjoying sushi for $385, which Carlos took care of."
+
+- write:
+    query: "The final outing on April 24, 2026 saw Amara, Diego, Hiroshi, Leila, and Yuki enjoying Vietnamese cuisine for $100, with Amara footing the bill."
+
+- read:
+    query: "What's Diego's exact balance in dollars right now? Remember that a positive number means the group owes Diego, a negative number means Diego owes the group, and zero means all even.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-185"

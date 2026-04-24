@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Lars, and Priya met for Pizza on January 20, 2026, and Priya picked up the $210 tab."
+
+- write:
+    query: "On 1-26-2026, Amina, Carlos, Hiroshi, Leila, and Yuki dined on Mexican food, and Carlos handled the $200 expense."
+
+- write:
+    query: "Amina, Carlos, Diego, Fatima, Lars, and Yuki gathered for Barbecue on 30th January 2026, and Diego took care of the $240 tab."
+
+- write:
+    query: "Amara, Amina, and Carlos met for Indian food on February 5, 2026, and Amina took the $90 check."
+
+- write:
+    query: "On February thirteenth, twenty twenty-six, Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki enjoyed Indian food, and Fatima picked up the $420 check."
+
+- write:
+    query: "The 18th of February 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki together for Barbecue, where Amara took the $400 tab."
+
+- write:
+    query: "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+
+- write:
+    query: "February 21st, 2026 saw Amara, Amina, Carlos, Diego, Fatima, Lars, Leila, and Priya at an Italian restaurant, where Leila settled the $280 check."
+
+- write:
+    query: "On 2-22-2026, Amara, Carlos, Lars, and Priya enjoyed Italian cuisine, with Lars handling the $160 tab."
+
+- write:
+    query: "The group consisting of Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Indian food on the 7th of March 2026, spending $200 in total, with Diego covering the cost."
+
+- read:
+    query: "Exactly how many dollars does Carlos's balance show right now, where being owed money by the group is positive, owing money to the group is negative, and zero means settled up?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "20"

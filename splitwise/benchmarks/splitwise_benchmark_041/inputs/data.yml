@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya gathered for Thai food on the 17th of January 2026, and Fatima took care of the $175 check."
+
+- write:
+    query: "On 1/18/2026, Amara, Carlos, and Diego went out for Vietnamese, with Carlos handling the $135 total."
+
+- write:
+    query: "Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki ventured out for Barbecue on January 22nd, 2026, where Yuki settled the $175 bill."
+
+- write:
+    query: "Amina, Carlos, Diego, Fatima, Lars, Leila, and Yuki headed to a Steakhouse on February eighth, two thousand twenty-six, where Diego covered the $420 total."
+
+- write:
+    query: "Carlos, Diego, and Fatima enjoyed Mexican cuisine on 2-9-2026, with Fatima handling the $180 check."
+
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya enjoyed Thai cuisine on February seventeenth, two thousand twenty-six, with Amara paying the $240 check."
+
+- write:
+    query: "On February 19, 2026, Amara, Amina, Carlos, Diego, Fatima, and Hiroshi dined on Thai food, with Carlos picking up the $210 bill."
+
+- write:
+    query: "The group consisting of Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki went out for Indian food on the 7th of March 2026, spending $200 in total, with Diego covering the cost."
+
+- write:
+    query: "The fourteenth of March 2026 found Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki at a Vietnamese restaurant with a $280 bill that Leila took care of."
+
+- write:
+    query: "March 31st, 2026 brought Amara, Amina, Diego, Hiroshi, Lars, Leila, Priya, and Yuki to a steakhouse for $440, which Lars covered."
+
+- read:
+    query: "How much money in dollars is Diego owed by the group, or does Diego owe the group instead? Use positive if Diego is owed money, negative if Diego owes money, and zero if settled up.\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "225"

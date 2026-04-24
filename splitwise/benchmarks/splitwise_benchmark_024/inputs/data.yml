@@ -1,0 +1,34 @@
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Lars, and Priya met for Pizza on January 20, 2026, and Priya picked up the $210 tab."
+
+- write:
+    query: "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+
+- write:
+    query: "On January twenty-ninth, two thousand twenty-six, Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki went for Sushi, with Yuki covering the $280 bill."
+
+- write:
+    query: "The 24th of February 2026 found Amara, Amina, Diego, Hiroshi, Priya, and Yuki dining on Ramen, with Amara covering the $240 total."
+
+- write:
+    query: "February 27th, 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, and Yuki together for Pizza, where Fatima settled the $240 bill."
+
+- write:
+    query: "March fourth, two thousand twenty-six found Carlos, Hiroshi, Priya, and Yuki dining at a Steakhouse, where Priya covered the $200 total."
+
+- write:
+    query: "On 3/27/2026, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki dined on Italian food for $245, with Carlos covering the cost."
+
+- write:
+    query: "On the thirtieth day of March 2026, Amara, Amina, Diego, Hiroshi, Lars, Leila, and Yuki enjoyed Vietnamese food totaling $315, with Leila footing the bill."
+
+- write:
+    query: "On the second of April 2026, Carlos, Hiroshi, and Leila had ramen costing $90, with Carlos paying the tab."
+
+- write:
+    query: "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+
+- read:
+    query: "Exactly how many dollars is Hiroshi's current balance, using the convention that positive means others owe him and negative means he owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    labels:
+      single_answer: "-395"

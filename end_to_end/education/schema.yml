@@ -1,0 +1,108 @@
+objects:
+  Student:
+    description: A person enrolled in an educational institution.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the student.
+      grade_level:
+        type: str
+        required: false
+        description: The current grade level or year of the student (e.g., sophomore, 10th grade).
+      major:
+        type: str
+        required: false
+        description: The academic major or field of study of the student.
+  Teacher:
+    description: An instructor who teaches courses.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the teacher.
+      subject_area:
+        type: str
+        required: false
+        description: The primary subject area or discipline the teacher specializes in.
+      title:
+        type: str
+        required: false
+        description: The professional title of the teacher (e.g., associate professor, lecturer).
+  Course:
+    description: An academic course or class offered by a school.
+    fields:
+      course_name:
+        type: str
+        required: true
+        description: The name of the course. Do not include "course" in the name unless it is part of the official name.
+      term:
+        type: str
+        required: false
+        description: The academic term during which the course is offered (e.g., Fall 2025, Spring 2026).
+      status:
+        type: str
+        required: false
+        enum:
+          - scheduled
+          - ongoing
+          - completed
+          - cancelled
+        description: The current status of the course.
+  School:
+    description: An educational institution such as a university or school.
+    fields:
+      name:
+        type: str
+        required: true
+        description: The official name of the school.
+      city:
+        type: str
+        required: false
+        description: The city where the school is located.
+relations:
+  EnrollmentRelation:
+    description: Represents that a student is enrolled in a course.
+    objects:
+      student:
+        type: Student
+        on_delete: cascade
+        description: The student enrolled in the course.
+      course:
+        type: Course
+        on_delete: cascade
+        description: The course the student is enrolled in.
+    keys:
+      unique_key:
+      - student
+      - course
+  TeachingRelation:
+    description: Represents that a teacher teaches a course.
+    objects:
+      teacher:
+        type: Teacher
+        on_delete: cascade
+        description: The teacher who teaches the course.
+      course:
+        type: Course
+        on_delete: cascade
+        description: The course taught by the teacher.
+    keys:
+      unique_key:
+      - teacher
+      - course
+  AttendanceRelation:
+    description: Represents that a student attends a school.
+    objects:
+      student:
+        type: Student
+        on_delete: cascade
+        description: The student who attends the school.
+      school:
+        type: School
+        on_delete: cascade
+        description: The school the student attends.
+    keys:
+      unique_key:
+      - student
+      - school

@@ -1,0 +1,236 @@
+# Initial state
+- write:
+    query: "Laura Simmons lives in Seattle and has a moderate risk profile. She holds checking account 1001-A at Pacific First Bank, which is headquartered in San Francisco."
+
+- write:
+    query: "Laura Simmons also owns a brokerage account 5500-B at Meridian Securities, headquartered in New York. Both of her accounts are currently active."
+
+- write:
+    query: "Mark Chen lives in Austin and has an aggressive risk profile. He holds savings account 2044-C at Pacific First Bank. The account is active."
+
+- write:
+    query: "Laura Simmons holds shares of AAPL, a technology stock for Apple Inc."
+
+- write:
+    query: "Mark Chen holds shares of TSLA, a technology stock for Tesla Inc., and shares of XOM, an energy stock for Exxon Mobil Corporation."
+
+- read:
+    query: "In which city does Laura Simmons reside?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "Seattle"
+
+- read:
+    query: "What is Laura Simmons's risk profile?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "moderate"
+
+- read:
+    query: "At which bank is account 1001-A held?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Pacific First Bank"
+
+- read:
+    query: "Where is Meridian Securities headquartered?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "New York"
+
+- read:
+    query: "What account type is 5500-B?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "brokerage"
+
+- read:
+    query: "Which stocks does Mark Chen hold?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "TSLA, XOM"
+
+- read:
+    query: "Which sector does AAPL belong to?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "technology"
+
+- read:
+    query: "How many accounts does Laura Simmons own?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "2"
+
+- read:
+    query: "How many accounts are held at Pacific First Bank?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "2"
+
+# Field change — account freeze.
+- write:
+    query: "Account 1001-A has been temporarily frozen due to suspicious activity."
+
+- read:
+    query: "What is the current status of account 1001-A?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "frozen"
+
+# Field change — risk profile update.
+- write:
+    query: "Following a lifestyle change, Laura Simmons has updated her investor profile. Her risk profile is now conservative."
+
+- read:
+    query: "What is Laura Simmons's current risk profile?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "conservative"
+
+# Field change — relocation.
+- write:
+    query: "Mark Chen has relocated. He now lives in Denver."
+
+- read:
+    query: "In which city does Mark Chen currently reside?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "Denver"
+
+# Field clearance — sector reclassification pending.
+- write:
+    query: "TSLA's market sector classification is being re-evaluated by the exchange and is no longer on file pending review."
+
+- read:
+    query: "Which sector does TSLA belong to?"
+    categories:
+      - single_fact_lookup
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "unknown"
+
+# Link change — account moves to a different bank.
+- write:
+    query: "Account 2044-C has been transferred from Pacific First Bank to Summit Trust Bank, which is headquartered in Chicago."
+
+- read:
+    query: "At which bank is account 2044-C now held?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Summit Trust Bank"
+
+- read:
+    query: "How many accounts are now held at Pacific First Bank?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "1"
+
+# Link deletion — stock sold off.
+- write:
+    query: "Mark Chen has sold off all of his shares of XOM and no longer holds that position."
+
+- read:
+    query: "Which stocks does Mark Chen currently hold?"
+    categories:
+      - aggregation
+      - relational
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "TSLA"
+
+# Link deletion — customer closes an account.
+- write:
+    query: "Laura Simmons has closed her brokerage account 5500-B at Meridian Securities."
+
+- read:
+    query: "What is the current status of account 5500-B?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "closed"
+
+# Entity rename — bank rebrand.
+- write:
+    query: "Pacific First Bank has announced a rebranding and is now officially known as PF Commerce Bank."
+
+- read:
+    query: "At which bank is Laura Simmons's checking account now held?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "PF Commerce Bank"
+
+# Entity rename — stock ticker/company change.
+- write:
+    query: "Exxon Mobil Corporation has rebranded to ExxonMobil Energy Group. Its XOM ticker remains unchanged."
+
+- read:
+    query: "Which company does the ticker XOM now represent?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "ExxonMobil Energy Group"
+
+# Entity deletion — bank dissolved.
+- write:
+    query: "Summit Trust Bank has collapsed and been dissolved. It is no longer in operation."
+
+- read:
+    query: "At which bank is account 2044-C now held?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "none"
+
+- read:
+    query: "Which banks are currently in operation?"
+    categories:
+      - aggregation
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "PF Commerce Bank"
+
+- read:
+    query: "Which customers currently hold accounts at PF Commerce Bank?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "Laura Simmons"

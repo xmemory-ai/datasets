@@ -1,0 +1,7 @@
+name: "End-to-end test in corporate domain - companies, employees, departments and projects."
+author: AlexG
+created_at: 2026-02-18
+inputs:
+  - data.yml
+scenario:
+  passthrough_yml:

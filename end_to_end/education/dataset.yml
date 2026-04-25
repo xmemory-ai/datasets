@@ -1,0 +1,7 @@
+name: "End-to-end test in education domain - courses, students, instructors and assignments."
+author: AlexG
+created_at: 2026-04-21
+inputs:
+  - data.yml
+scenario:
+  passthrough_yml:

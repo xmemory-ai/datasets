@@ -1,0 +1,115 @@
+objects:
+  Customer:
+    description: A person who holds financial accounts or investments.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the customer.
+      residence_city:
+        type: str
+        required: false
+        description: The city where the customer resides.
+      risk_profile:
+        type: str
+        required: false
+        enum:
+          - conservative
+          - moderate
+          - aggressive
+        description: The investment risk profile of the customer.
+  Account:
+    description: A financial account held at a bank.
+    fields:
+      account_number:
+        type: str
+        required: true
+        description: The account number uniquely identifying the account.
+      account_type:
+        type: str
+        required: false
+        enum:
+          - checking
+          - savings
+          - brokerage
+        description: The type of financial account.
+      status:
+        type: str
+        required: false
+        enum:
+          - active
+          - frozen
+          - closed
+        description: The current status of the account.
+  Bank:
+    description: A banking institution that holds customer accounts.
+    fields:
+      name:
+        type: str
+        required: true
+        description: The official name of the bank.
+      headquarters:
+        type: str
+        required: false
+        description: The city where the bank is headquartered.
+  Stock:
+    description: A publicly traded stock or equity security.
+    fields:
+      ticker:
+        type: str
+        required: true
+        description: The stock ticker symbol.
+      company_name:
+        type: str
+        required: false
+        description: The name of the company the stock represents.
+      sector:
+        type: str
+        required: false
+        description: The market sector the stock belongs to (e.g., technology, healthcare).
+relations:
+  AccountOwnership:
+    description: Represents that a customer owns an account.
+    objects:
+      customer:
+        type: Customer
+        on_delete: cascade
+        description: The customer who owns the account.
+      account:
+        type: Account
+        on_delete: cascade
+        description: The account owned by the customer.
+    keys:
+      unique_key:
+      - customer
+      - account
+  AccountBank:
+    description: Represents that an account is held at a specific bank.
+    objects:
+      account:
+        type: Account
+        on_delete: cascade
+        description: The account held at the bank.
+      bank:
+        type: Bank
+        on_delete: cascade
+        description: The bank where the account is held.
+    keys:
+      unique_key:
+      - account
+      - bank
+  StockHolding:
+    description: Represents that a customer holds shares of a stock.
+    objects:
+      customer:
+        type: Customer
+        on_delete: cascade
+        description: The customer holding the stock.
+      stock:
+        type: Stock
+        on_delete: cascade
+        description: The stock held by the customer.
+    keys:
+      unique_key:
+      - customer
+      - stock

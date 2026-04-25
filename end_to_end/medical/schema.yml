@@ -1,0 +1,115 @@
+objects:
+  Patient:
+    description: A person receiving medical care.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the patient.
+      date_of_birth:
+        type: str
+        required: false
+        description: The date of birth of the patient in format YYYY-MM-DD.
+      blood_type:
+        type: str
+        required: false
+        enum:
+          - "A+"
+          - "A-"
+          - "B+"
+          - "B-"
+          - "AB+"
+          - "AB-"
+          - "O+"
+          - "O-"
+        description: The ABO/Rh blood type of the patient.
+  Doctor:
+    description: A licensed medical professional who treats patients.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the doctor.
+      specialty:
+        type: str
+        required: false
+        description: The medical specialty of the doctor (e.g., cardiologist, pulmonologist).
+      license_number:
+        type: str
+        required: false
+        description: The professional license number of the doctor.
+  Hospital:
+    description: A medical facility where doctors practice and patients are treated.
+    fields:
+      name:
+        type: str
+        required: true
+        description: The official name of the hospital. Do not include "hospital" in the name unless it is part of the official name.
+      city:
+        type: str
+        required: false
+        description: The city where the hospital is located.
+      status:
+        type: str
+        required: false
+        enum:
+          - active
+          - closed
+        description: Whether the hospital is currently operational.
+  Medication:
+    description: A drug or medicinal substance prescribed to a patient.
+    fields:
+      name:
+        type: str
+        required: true
+        description: The name of the medication. Do not include dosage in the name.
+      dosage:
+        type: str
+        required: false
+        description: The dosage of the medication (e.g., 50mg, 10ml).
+relations:
+  TreatmentRelation:
+    description: Represents that a doctor treats a patient.
+    objects:
+      patient:
+        type: Patient
+        on_delete: cascade
+        description: The patient being treated.
+      doctor:
+        type: Doctor
+        on_delete: cascade
+        description: The doctor providing treatment.
+    keys:
+      unique_key:
+      - patient
+      - doctor
+  AffiliationRelation:
+    description: Represents that a doctor is affiliated with a hospital.
+    objects:
+      doctor:
+        type: Doctor
+        on_delete: cascade
+        description: The doctor affiliated with the hospital.
+      hospital:
+        type: Hospital
+        on_delete: cascade
+        description: The hospital the doctor is affiliated with.
+    keys:
+      unique_key:
+      - doctor
+      - hospital
+  PrescriptionRelation:
+    description: Represents that a patient is prescribed a medication.
+    objects:
+      patient:
+        type: Patient
+        on_delete: cascade
+        description: The patient prescribed the medication.
+      medication:
+        type: Medication
+        on_delete: cascade
+        description: The medication prescribed to the patient.
+    keys:
+      unique_key:
+      - patient
+      - medication

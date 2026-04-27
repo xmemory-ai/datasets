@@ -1,0 +1,236 @@
+# Initial state
+- write:
+    query: "Emma Davis, born on 1985-04-12, is a patient with blood type O+. She is treated by Dr. Sarah Chen, a cardiologist at Metro General, which is a hospital in Boston."
+
+- write:
+    query: "John Miller, born on 1972-11-30, is a patient with blood type AB-. He is treated by Dr. Robert Kim, a pulmonologist who also practices at Metro General."
+
+- write:
+    query: "Emma Davis has been prescribed Atenolol at a dosage of 50mg by Dr. Sarah Chen."
+
+- write:
+    query: "John Miller has been prescribed Albuterol at a dosage of 90mcg by Dr. Robert Kim."
+
+- read:
+    query: "What is Emma Davis's blood type?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "O+"
+
+- read:
+    query: "When was Emma Davis born?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "1985-04-12"
+
+- read:
+    query: "Who is Emma Davis's treating doctor?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Dr. Sarah Chen"
+
+- read:
+    query: "What is Dr. Sarah Chen's medical specialty?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "cardiologist"
+
+- read:
+    query: "At which hospital does Dr. Sarah Chen practice?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Metro General"
+
+- read:
+    query: "What medication is Emma Davis currently taking?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Atenolol"
+
+- read:
+    query: "Who treats John Miller?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Dr. Robert Kim"
+
+- read:
+    query: "How many patients does Metro General currently serve?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "2"
+
+- read:
+    query: "Which hospitals are located in Boston?"
+    categories:
+      - aggregation
+    labels:
+      single_answer: "Metro General"
+
+# Field change — medication dosage updated.
+- write:
+    query: "Emma Davis's Atenolol dosage has been increased from 50mg to 100mg."
+
+- read:
+    query: "What is the current dosage of Emma Davis's Atenolol prescription?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "100mg"
+
+# Field change — specialty update.
+- write:
+    query: "Dr. Sarah Chen has completed fellowship training. Her specialty is now interventional cardiologist."
+
+- read:
+    query: "What is Dr. Sarah Chen's current specialty?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "interventional cardiologist"
+
+# Temporal / relational reasoning.
+- write:
+    query: "A new patient, Priya Patel, was admitted on 2026-01-10. She is treated by Dr. Sarah Chen. Her blood type is A+."
+
+- read:
+    query: "How many patients does Dr. Sarah Chen currently treat?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "2"
+
+# Field clearance — blood type invalidated pending retest.
+- write:
+    query: "Emma Davis's prior blood type record has been invalidated and is no longer on file pending a retest."
+
+- read:
+    query: "What is Emma Davis's blood type?"
+    categories:
+      - single_fact_lookup
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "unknown"
+
+# Link change — patient transfers care between doctors.
+- write:
+    query: "John Miller has transferred his care from Dr. Robert Kim to Dr. Sarah Chen."
+
+- read:
+    query: "Who is John Miller's current treating doctor?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Dr. Sarah Chen"
+
+- read:
+    query: "How many patients does Dr. Robert Kim currently treat?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "0"
+
+# Link deletion — medication discontinued.
+- write:
+    query: "Emma Davis is no longer taking Atenolol. Her prescription has been discontinued."
+
+- read:
+    query: "What medication is Emma Davis currently taking?"
+    categories:
+      - single_fact_lookup
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "none"
+
+- read:
+    query: "Which patients are currently prescribed Albuterol?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "John Miller"
+
+# Entity rename — hospital is rebranded.
+- write:
+    query: "Metro General has been rebranded and is now known as Boston Regional Medical Center."
+
+- read:
+    query: "At which hospital does Dr. Sarah Chen now practice?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Boston Regional Medical Center"
+
+- read:
+    query: "At which hospital does Dr. Robert Kim now practice?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Boston Regional Medical Center"
+
+# Entity deletion — doctor retires and stops treating patients.
+- write:
+    query: "Dr. Robert Kim has retired and is no longer practicing medicine."
+
+- read:
+    query: "Which doctors are currently actively practicing?"
+    categories:
+      - aggregation
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "Dr. Sarah Chen"
+
+- read:
+    query: "Who treats John Miller now?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Dr. Sarah Chen"
+
+- read:
+    query: "Which patients are currently prescribed Albuterol?"
+    categories:
+      - aggregation
+      - relational
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "none"
+
+- read:
+    query: "Which hospitals are currently operating?"
+    categories:
+      - aggregation
+      - state
+    labels:
+      single_answer: "Boston Regional Medical Center"

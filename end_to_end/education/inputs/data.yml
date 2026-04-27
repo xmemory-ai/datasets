@@ -83,9 +83,20 @@
     labels:
       single_answer: "Intro to Algorithms, Linear Algebra"
 
+- read:
+    query: "Which professors are currently not teaching at Riverside University?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "none"
+
 # Field change — course status transitions.
 - write:
     query: "The Fall 2025 term has ended. Intro to Algorithms has been marked as completed."
+    categories:
+      - field_change
 
 - read:
     query: "What is the current status of Intro to Algorithms?"
@@ -98,6 +109,8 @@
 # Field change — promotion.
 - write:
     query: "Professor Alan Whitaker has been promoted. His new title is full professor."
+    categories:
+      - field_change
 
 - read:
     query: "What is Professor Alan Whitaker's current title?"
@@ -107,9 +120,20 @@
     labels:
       single_answer: "full professor"
 
+- read:
+    query: "Which professors do not have the title of full professor?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "Dr. Nina Fischer"
+
 # Field change — student grade level change.
 - write:
     query: "Maria Rodriguez has advanced a grade. She is now a junior."
+    categories:
+      - field_change
 
 - read:
     query: "What grade level is Maria Rodriguez now in?"
@@ -122,19 +146,31 @@
 # Field clearance — undeclared major.
 - write:
     query: "Daniel Park has decided to drop his major and is currently undeclared. His major is no longer on file."
+    categories:
+      - field_clearance
 
 - read:
     query: "What is Daniel Park's major?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "undeclared"
+
+- read:
+    query: "Which students currently do not have a declared major?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "Daniel Park"
 
 # Link change — student switches course enrollment.
 - write:
     query: "Daniel Park has dropped Linear Algebra and enrolled instead in Real Analysis for the Spring 2026 term. Real Analysis is currently ongoing and is taught by Dr. Nina Fischer."
+    categories:
+      - link_change
 
 - read:
     query: "Which course is Daniel Park currently enrolled in?"
@@ -157,19 +193,22 @@
 # Link deletion — student unenrolls without replacement.
 - write:
     query: "Maria Rodriguez has withdrawn from Intro to Algorithms and is no longer enrolled in it."
+    categories:
+      - link_deletion
 
 - read:
     query: "Which course is Maria Rodriguez currently enrolled in?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "none"
 
 # Entity rename — school rebranding.
 - write:
     query: "Riverside University has officially changed its name to Riverside Institute of Technology."
+    categories:
+      - entity_rename
 
 - read:
     query: "Which school does Maria Rodriguez now attend?"
@@ -192,6 +231,9 @@
 # Course cancellation — link deletions.
 - write:
     query: "Real Analysis has been cancelled due to low enrollment."
+    categories:
+      - field_change
+      - link_deletion
 
 - read:
     query: "What is the current status of Real Analysis?"
@@ -206,20 +248,21 @@
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "none"
 
 # Entity deletion — teacher leaves the institution.
 - write:
     query: "Dr. Nina Fischer has resigned from the faculty and is no longer teaching any courses."
+    categories:
+      - entity_deletion
+      - link_deletion
 
 - read:
     query: "Who currently teaches Linear Algebra?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "no teacher"
 
@@ -228,7 +271,6 @@
     categories:
       - aggregation
       - state
-      - negative_exclusion
     labels:
       single_answer: "Professor Alan Whitaker"
 
@@ -237,6 +279,5 @@
     categories:
       - aggregation
       - state
-      - negative_exclusion
     labels:
       single_answer: "none"

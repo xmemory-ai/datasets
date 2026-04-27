@@ -84,6 +84,8 @@
 # Field change — account freeze.
 - write:
     query: "Account 1001-A has been temporarily frozen due to suspicious activity."
+    categories:
+      - field_change
 
 - read:
     query: "What is the current status of account 1001-A?"
@@ -93,9 +95,21 @@
     labels:
       single_answer: "frozen"
 
+- read:
+    query: "How many non-frozen accounts are currently held at Pacific First Bank?"
+    categories:
+      - aggregation
+      - relational
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "1"
+
 # Field change — risk profile update.
 - write:
     query: "Following a lifestyle change, Laura Simmons has updated her investor profile. Her risk profile is now conservative."
+    categories:
+      - field_change
 
 - read:
     query: "What is Laura Simmons's current risk profile?"
@@ -108,6 +122,8 @@
 # Field change — relocation.
 - write:
     query: "Mark Chen has relocated. He now lives in Denver."
+    categories:
+      - field_change
 
 - read:
     query: "In which city does Mark Chen currently reside?"
@@ -120,19 +136,31 @@
 # Field clearance — sector reclassification pending.
 - write:
     query: "TSLA's market sector classification is being re-evaluated by the exchange and is no longer on file pending review."
+    categories:
+      - field_clearance
 
 - read:
     query: "Which sector does TSLA belong to?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "unknown"
+
+- read:
+    query: "Which stocks currently do not belong to energy sector?"
+    categories:
+      - aggregation
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "TSLA, AAPL"
 
 # Link change — account moves to a different bank.
 - write:
     query: "Account 2044-C has been transferred from Pacific First Bank to Summit Trust Bank, which is headquartered in Chicago."
+    categories:
+      - link_change
 
 - read:
     query: "At which bank is account 2044-C now held?"
@@ -155,6 +183,8 @@
 # Link deletion — stock sold off.
 - write:
     query: "Mark Chen has sold off all of his shares of XOM and no longer holds that position."
+    categories:
+      - link_deletion
 
 - read:
     query: "Which stocks does Mark Chen currently hold?"
@@ -162,13 +192,15 @@
       - aggregation
       - relational
       - state
-      - negative_exclusion
     labels:
       single_answer: "TSLA"
 
 # Link deletion — customer closes an account.
 - write:
     query: "Laura Simmons has closed her brokerage account 5500-B at Meridian Securities."
+    categories:
+      - link_deletion
+      - field_change
 
 - read:
     query: "What is the current status of account 5500-B?"
@@ -181,6 +213,8 @@
 # Entity rename — bank rebrand.
 - write:
     query: "Pacific First Bank has announced a rebranding and is now officially known as PF Commerce Bank."
+    categories:
+      - entity_rename
 
 - read:
     query: "At which bank is Laura Simmons's checking account now held?"
@@ -194,6 +228,8 @@
 # Entity rename — stock ticker/company change.
 - write:
     query: "Exxon Mobil Corporation has rebranded to ExxonMobil Energy Group. Its XOM ticker remains unchanged."
+    categories:
+      - entity_rename
 
 - read:
     query: "Which company does the ticker XOM now represent?"
@@ -206,6 +242,9 @@
 # Entity deletion — bank dissolved.
 - write:
     query: "Summit Trust Bank has collapsed and been dissolved. It is no longer in operation."
+    categories:
+      - entity_deletion
+      - link_deletion
 
 - read:
     query: "At which bank is account 2044-C now held?"
@@ -213,7 +252,6 @@
       - single_fact_lookup
       - state
       - relational
-      - negative_exclusion
     labels:
       single_answer: "none"
 
@@ -222,7 +260,6 @@
     categories:
       - aggregation
       - state
-      - negative_exclusion
     labels:
       single_answer: "PF Commerce Bank"
 

@@ -34,10 +34,6 @@ objects:
         type: str
         required: false
         description: The medical specialty of the doctor (e.g., cardiologist, pulmonologist).
-      license_number:
-        type: str
-        required: false
-        description: The professional license number of the doctor.
   Hospital:
     description: A medical facility where doctors practice and patients are treated.
     fields:

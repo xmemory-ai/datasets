@@ -79,9 +79,38 @@
     labels:
       single_answer: "Metro General"
 
+- read:
+    query: "Which patients aren't currently on Atenolol?"
+    categories:
+      - aggregation
+      - negative_exclusion
+    labels:
+      single_answer: "John Miller"
+
+- read:
+    query: "Which patients aren't treated by Dr. Robert Kim?"
+    categories:
+      - aggregation
+      - negative_exclusion
+      - relational
+    labels:
+      single_answer: "Emma Davis"
+
+- read:
+    query: "Which patients aren't served by Metro Central?"
+    categories:
+      - aggregation
+      - negative_exclusion
+      - relational
+    labels:
+      single_answer: "no patients"
+
+
 # Field change — medication dosage updated.
 - write:
     query: "Emma Davis's Atenolol dosage has been increased from 50mg to 100mg."
+    categories:
+      - field_change
 
 - read:
     query: "What is the current dosage of Emma Davis's Atenolol prescription?"
@@ -94,6 +123,8 @@
 # Field change — specialty update.
 - write:
     query: "Dr. Sarah Chen has completed fellowship training. Her specialty is now interventional cardiologist."
+    categories:
+      - field_change
 
 - read:
     query: "What is Dr. Sarah Chen's current specialty?"
@@ -119,19 +150,30 @@
 # Field clearance — blood type invalidated pending retest.
 - write:
     query: "Emma Davis's prior blood type record has been invalidated and is no longer on file pending a retest."
+    categories:
+      - field_clearance
 
 - read:
     query: "What is Emma Davis's blood type?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "unknown"
+
+- read:
+    query: "Which patients have blood type different from AB-?"
+    categories:
+      - aggregation
+      - negative_exclusion
+    labels:
+      single_answer: "Priya Patel"
 
 # Link change — patient transfers care between doctors.
 - write:
     query: "John Miller has transferred his care from Dr. Robert Kim to Dr. Sarah Chen."
+    categories:
+      - link_change
 
 - read:
     query: "Who is John Miller's current treating doctor?"
@@ -154,6 +196,8 @@
 # Link deletion — medication discontinued.
 - write:
     query: "Emma Davis is no longer taking Atenolol. Her prescription has been discontinued."
+    categories:
+      - link_deletion
 
 - read:
     query: "What medication is Emma Davis currently taking?"
@@ -163,6 +207,16 @@
       - negative_exclusion
     labels:
       single_answer: "none"
+
+- read:
+    query: "Which patients are currently not prescribed Atenolol?"
+    categories:
+      - aggregation
+      - relational
+      - state
+      - negative_exclusion
+    labels:
+      single_answer: "Emma Davis, John Miller, Priya Patel"
 
 - read:
     query: "Which patients are currently prescribed Albuterol?"
@@ -176,6 +230,8 @@
 # Entity rename — hospital is rebranded.
 - write:
     query: "Metro General has been rebranded and is now known as Boston Regional Medical Center."
+    categories:
+      - entity_rename
 
 - read:
     query: "At which hospital does Dr. Sarah Chen now practice?"
@@ -198,13 +254,15 @@
 # Entity deletion — doctor retires and stops treating patients.
 - write:
     query: "Dr. Robert Kim has retired and is no longer practicing medicine."
+    categories:
+      - entity_deletion
+      - link_deletion
 
 - read:
     query: "Which doctors are currently actively practicing?"
     categories:
       - aggregation
       - state
-      - negative_exclusion
     labels:
       single_answer: "Dr. Sarah Chen"
 
@@ -218,19 +276,18 @@
       single_answer: "Dr. Sarah Chen"
 
 - read:
-    query: "Which patients are currently prescribed Albuterol?"
-    categories:
-      - aggregation
-      - relational
-      - state
-      - negative_exclusion
-    labels:
-      single_answer: "none"
-
-- read:
     query: "Which hospitals are currently operating?"
     categories:
       - aggregation
       - state
     labels:
       single_answer: "Boston Regional Medical Center"
+
+- read:
+    query: "Which patients were born before 1980?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "John Miller"

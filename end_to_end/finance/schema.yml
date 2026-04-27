@@ -36,6 +36,7 @@ objects:
       status:
         type: str
         required: false
+        default: active
         enum:
           - active
           - frozen

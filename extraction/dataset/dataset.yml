@@ -1,4 +1,4 @@
-name: "Insurance Claims Extraction dataset for structured output benchmark (fixed labels)."
+name: "xmemory extraction benchmark for insurance claims from cleanlab (fixed labels)."
 author: AlexG
 created_at: 2026-02-09
 

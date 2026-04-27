@@ -1,0 +1,117 @@
+{
+	"type": "object",
+	"properties": {
+		"header": {
+			"type": "object",
+			"description":"Basic claim information",
+			"properties": {
+				"claim_id": {
+					"type": "string",
+					"description": "Claim ID in format CLM-XXXXXX, where X is a digit"
+				},
+				"report_date": {
+					"type": "string",
+					"description": "Date claim was reported (yyyy-mm-dd)"
+				},
+				"incident_date": {
+					"type": "string",
+					"description": "Date incident occurred (yyyy-mm-dd)"
+				},
+				"reported_by": {
+					"type": "string",
+					"description": "Full name of person reporting claim"
+				},
+				"channel": {
+					"type": "string",
+					"enum": ["Email", "Phone", "Portal", "In-Person"],
+					"description": "Channel used to report claim."
+				}
+			}
+		},
+		"policy_details": {
+			"type": "object",
+			"description":"Policy information if available",
+			"properties": {
+				"policy_number": {
+					"type": "string",
+					"description": "Policy number in format POL-XXXXXXXXX, where X is a digit"
+				},
+				"policyholder_name": {
+					"type": "string",
+					"description": "Full legal name on policy, e.g. Will Smith"
+				},
+				"coverage_type": {
+					"type": "string",
+					"enum": ["Property", "Auto", "Liability", "Health", "Travel", "Other"],
+					"description": "Type of insurance coverage."
+				},
+				"effective_date": {
+					"type": "string",
+					"description": "Policy effective start date (yyyy-mm-dd)"
+				},
+				"expiration_date": {
+					"type": "string",
+					"description": "Policy expiration end date (yyyy-mm-dd)"
+				}
+			}
+		},
+		"insured_objects": {
+			"type": "array",
+			"items": {
+			    "type": "object",
+			    "description":"List of insured objects involved, if applicable",
+			    "properties": {
+			    	"object_id": {
+			    		"type": "string",
+			    		"description": "Unique identifier for insured object. For vehicles, use VIN format (e.g., VIN12345678901234567). For buildings, use PROP-XXXXXX format. For liability, use LIAB-XXXXXX format. For other objects, use OBJ-XXXXXX format, where X is a digit"
+			    	},
+			    	"object_type": {
+			    		"type": "string",
+			    		"enum": ["Vehicle", "Building", "Person", "Other"],
+			    		"description": "Type of insured object."
+			    	},
+			    	"make_model": {
+			    		"type": "string",
+			    		"description": "Make and model for vehicles (use standardtized manufacturer names and models), or building type for property (one word, possible options: house, townhouse, office, shop, bakery)"
+			    	},
+			    	"year": {
+			    		"type": "integer",
+			    		"description": "Year for vehicles or year built for buildings"
+			    	},
+			    	"location_address": {
+			    		"type": "string",
+			    		"description": "Full street address where object is located or originated from, format '1234 Street, Town'"
+			    	},
+			    	"estimated_value": {
+			    		"type": "integer",
+			    		"description": "Estimated market or insured value of the object itself in USD without currency symbol"
+			    	}
+			    }
+			}
+		},
+		"incident_description": {
+			"type": "object",
+			"description":"Structured incident details",
+			"properties": {
+				"incident_type" : {
+					"type": "string",
+					"enum": ["rear_end_collision", "side_impact_collision", "head_on_collision", "parking_lot_collision", "house_fire", "kitchen_fire", "electrical_fire", "burst_pipe_flood", "storm_damage", "roof_leak", "slip_and_fall", "property_injury", "product_liability", "theft_burglary", "vandalism"],
+					"description": "Specific standardized incident type."
+				},
+				"location_type" : {
+					"type": "string",
+					"enum": ["intersection", "highway", "parking_lot", "driveway", "residential_street", "residential_property", "commercial_property", "public_property"],
+					"description": "Standardized location type where incident occurred."
+				},
+				"estimated_damage_amount" : {
+					"type": "integer",
+					"description": "Estimated damage in USD without currency symbol"
+				},
+				"police_report_number" : {
+					"type": "string",
+					"description": "Police report number if applicable"
+				}
+			}
+		}
+	}
+}

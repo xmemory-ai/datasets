@@ -1,4 +1,3 @@
-# Initial state
 - write:
     query: "Emma Davis, born on 1985-04-12, is a patient with blood type O+. She is treated by Dr. Sarah Chen, a cardiologist at Metro General, which is a hospital in Boston."
 
@@ -105,8 +104,6 @@
     labels:
       single_answer: "no patients"
 
-
-# Field change — medication dosage updated.
 - write:
     query: "Emma Davis's Atenolol dosage has been increased from 50mg to 100mg."
     categories:
@@ -120,7 +117,6 @@
     labels:
       single_answer: "100mg"
 
-# Field change — specialty update.
 - write:
     query: "Dr. Sarah Chen has completed fellowship training. Her specialty is now interventional cardiologist."
     categories:
@@ -134,7 +130,6 @@
     labels:
       single_answer: "interventional cardiologist"
 
-# Temporal / relational reasoning.
 - write:
     query: "A new patient, Priya Patel, was admitted on 2026-01-10. She is treated by Dr. Sarah Chen. Her blood type is A+."
 
@@ -147,7 +142,6 @@
     labels:
       single_answer: "2"
 
-# Field clearance — blood type invalidated pending retest.
 - write:
     query: "Emma Davis's prior blood type record has been invalidated and is no longer on file pending a retest."
     categories:
@@ -169,7 +163,6 @@
     labels:
       single_answer: "Priya Patel"
 
-# Link change — patient transfers care between doctors.
 - write:
     query: "John Miller has transferred his care from Dr. Robert Kim to Dr. Sarah Chen."
     categories:
@@ -193,7 +186,6 @@
     labels:
       single_answer: "0"
 
-# Link deletion — medication discontinued.
 - write:
     query: "Emma Davis is no longer taking Atenolol. Her prescription has been discontinued."
     categories:
@@ -227,7 +219,6 @@
     labels:
       single_answer: "John Miller"
 
-# Entity rename — hospital is rebranded.
 - write:
     query: "Metro General has been rebranded and is now known as Boston Regional Medical Center."
     categories:
@@ -251,7 +242,6 @@
     labels:
       single_answer: "Boston Regional Medical Center"
 
-# Entity deletion — doctor retires and stops treating patients.
 - write:
     query: "Dr. Robert Kim has retired and is no longer practicing medicine."
     categories:

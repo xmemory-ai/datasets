@@ -1,4 +1,3 @@
-# Initial state
 - write:
     query: "Maria Rodriguez is a sophomore majoring in Computer Science. She attends Riverside University, located in Chicago."
 
@@ -92,7 +91,6 @@
     labels:
       single_answer: "none"
 
-# Field change — course status transitions.
 - write:
     query: "The Fall 2025 term has ended. Intro to Algorithms has been marked as completed."
     categories:
@@ -106,7 +104,6 @@
     labels:
       single_answer: "completed"
 
-# Field change — promotion.
 - write:
     query: "Professor Alan Whitaker has been promoted. His new title is full professor."
     categories:
@@ -129,7 +126,6 @@
     labels:
       single_answer: "Dr. Nina Fischer"
 
-# Field change — student grade level change.
 - write:
     query: "Maria Rodriguez has advanced a grade. She is now a junior."
     categories:
@@ -143,7 +139,6 @@
     labels:
       single_answer: "junior"
 
-# Field clearance — undeclared major.
 - write:
     query: "Daniel Park has decided to drop his major and is currently undeclared. His major is no longer on file."
     categories:
@@ -166,7 +161,6 @@
     labels:
       single_answer: "Daniel Park"
 
-# Link change — student switches course enrollment.
 - write:
     query: "Daniel Park has dropped Linear Algebra and enrolled instead in Real Analysis for the Spring 2026 term. Real Analysis is currently ongoing and is taught by Dr. Nina Fischer."
     categories:
@@ -190,7 +184,6 @@
     labels:
       single_answer: "0"
 
-# Link deletion — student unenrolls without replacement.
 - write:
     query: "Maria Rodriguez has withdrawn from Intro to Algorithms and is no longer enrolled in it."
     categories:
@@ -204,7 +197,6 @@
     labels:
       single_answer: "none"
 
-# Entity rename — school rebranding.
 - write:
     query: "Riverside University has officially changed its name to Riverside Institute of Technology."
     categories:
@@ -228,7 +220,6 @@
     labels:
       single_answer: "Riverside Institute of Technology"
 
-# Course cancellation — link deletions.
 - write:
     query: "Real Analysis has been cancelled due to low enrollment."
     categories:
@@ -251,7 +242,6 @@
     labels:
       single_answer: "none"
 
-# Entity deletion — teacher leaves the institution.
 - write:
     query: "Dr. Nina Fischer has resigned from the faculty and is no longer teaching any courses."
     categories:

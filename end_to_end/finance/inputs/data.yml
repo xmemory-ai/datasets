@@ -1,4 +1,3 @@
-# Initial state
 - write:
     query: "Laura Simmons lives in Seattle and has a moderate risk profile. She holds checking account 1001-A at Pacific First Bank, which is headquartered in San Francisco."
 
@@ -81,7 +80,6 @@
     labels:
       single_answer: "2"
 
-# Field change — account freeze.
 - write:
     query: "Account 1001-A has been temporarily frozen due to suspicious activity."
     categories:
@@ -105,7 +103,6 @@
     labels:
       single_answer: "1"
 
-# Field change — risk profile update.
 - write:
     query: "Following a lifestyle change, Laura Simmons has updated her investor profile. Her risk profile is now conservative."
     categories:
@@ -119,7 +116,6 @@
     labels:
       single_answer: "conservative"
 
-# Field change — relocation.
 - write:
     query: "Mark Chen has relocated. He now lives in Denver."
     categories:
@@ -133,7 +129,6 @@
     labels:
       single_answer: "Denver"
 
-# Field clearance — sector reclassification pending.
 - write:
     query: "TSLA's market sector classification is being re-evaluated by the exchange and is no longer on file pending review."
     categories:
@@ -156,7 +151,6 @@
     labels:
       single_answer: "TSLA, AAPL"
 
-# Link change — account moves to a different bank.
 - write:
     query: "Account 2044-C has been transferred from Pacific First Bank to Summit Trust Bank, which is headquartered in Chicago."
     categories:
@@ -180,7 +174,6 @@
     labels:
       single_answer: "1"
 
-# Link deletion — stock sold off.
 - write:
     query: "Mark Chen has sold off all of his shares of XOM and no longer holds that position."
     categories:
@@ -195,7 +188,6 @@
     labels:
       single_answer: "TSLA"
 
-# Link deletion — customer closes an account.
 - write:
     query: "Laura Simmons has closed her brokerage account 5500-B at Meridian Securities."
     categories:
@@ -210,7 +202,6 @@
     labels:
       single_answer: "closed"
 
-# Entity rename — bank rebrand.
 - write:
     query: "Pacific First Bank has announced a rebranding and is now officially known as PF Commerce Bank."
     categories:
@@ -225,7 +216,6 @@
     labels:
       single_answer: "PF Commerce Bank"
 
-# Entity rename — stock ticker/company change.
 - write:
     query: "Exxon Mobil Corporation has rebranded to ExxonMobil Energy Group. Its XOM ticker remains unchanged."
     categories:
@@ -239,7 +229,6 @@
     labels:
       single_answer: "ExxonMobil Energy Group"
 
-# Entity deletion — bank dissolved.
 - write:
     query: "Summit Trust Bank has collapsed and been dissolved. It is no longer in operation."
     categories:

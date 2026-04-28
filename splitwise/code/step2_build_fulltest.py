@@ -28,10 +28,8 @@ DEFAULT_INIT_PROMPTS = 10
 # Appended to every balance query string (single signed integer USD balance; no prose).
 BALANCE_QUERY_PLAIN_ANSWER_SUFFIX = (
     "\n\n"
-    "Answer with only one signed integer: the balance in USD for the person named in the question. "
-    "Sign: positive means the group owes that person (they are net owed money); "
-    "negative means they owe the group. "
-    "No words, no currency symbol, no explanation — just the integer."
+    "Answer with one signed integer in USD: positive if the group owes them, "
+    "negative if they owe the group. Just the integer — no words, no currency symbol."
 )
 
 
@@ -67,16 +65,19 @@ def names_for_queries(events, cast_path):
 
 
 def generate_balance_queries_variety(name, variety):
-    """Return `variety` distinct natural-language balance questions for `name` (no answer-format suffix)."""
+    """Return `variety` distinct natural-language balance questions for `name` (no answer-format suffix).
+
+    Questions are kept clean: they ask for the exact dollar balance and nothing more.
+    The sign convention and output format live in BALANCE_QUERY_PLAIN_ANSWER_SUFFIX, which
+    is appended downstream — do NOT restate either here.
+    """
     prompt = (
         "You write short natural English questions about one person's balance in a shared expense tracker.\n\n"
-        "Each question must clearly ask for the exact numerical balance in dollars (the specific amount), "
-        "not merely whether the balance is positive, negative, or who owes whom without a number. "
-        "Phrases like \"how much\", \"what's the balance in dollars\", \"exactly how many dollars\" are appropriate.\n\n"
-        "Sign convention (include in each question so the numeric answer is unambiguous):\n"
-        "- A positive balance means that person is owed money by the group (the group owes them).\n"
-        "- A negative balance means that person owes money to the group.\n"
-        "- Zero means they are settled up.\n\n"
+        "Each question must ask for the exact numerical balance in dollars (the specific amount), "
+        "not merely who owes whom in the abstract. Keep each question to one short sentence.\n\n"
+        "Do NOT restate any sign convention, do NOT explain what positive/negative means, "
+        "and do NOT include answer-format instructions — those are appended separately downstream. "
+        "Just ask the question.\n\n"
         f"Write exactly {variety} distinct questions that elicit {name}'s current balance as a concrete dollar amount. "
         f"Vary tone and phrasing. Fill the questions field with exactly {variety} strings."
     )
@@ -123,6 +124,10 @@ def _init_prompt_instruction_block(num, roster):
         "- DISTINCTNESS: state explicitly that outings at the same location or of the same type "
         "on different calendar dates are **distinct** outings and must never be merged or "
         "deduplicated. Weave this naturally into the paragraph.\n"
+        "- DATE STORAGE FORMAT: state explicitly that every outing's date must be stored in the "
+        "database as a dash-separated ISO calendar date in the form YYYY-MM-DD (e.g. 2026-01-15), "
+        "regardless of how the source message phrases the date. This canonical format is essential "
+        "because later questions will look up outings by date.\n"
     )
 
 

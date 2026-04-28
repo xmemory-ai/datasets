@@ -1,34 +1,54 @@
 - write:
-    query: "Amara, Carlos, Fatima, Hiroshi, Lars, and Priya met for Pizza on January 20, 2026, and Priya picked up the $210 tab."
+    query: "On January 16, 2026, Amina, Carlos, Diego, Lars, Leila, Priya, and Yuki enjoyed Mexican food with a total of $280, which Lars covered."
 
 - write:
-    query: "The seventh member group of Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki enjoyed Sushi on Jan 21, 2026, with Lars covering the $245 total."
+    query: "On January 17, 2026, Amara, Amina, Carlos, Diego, Fatima, Leila, and Priya dined at a Thai restaurant for $175, and Fatima took care of the check."
 
 - write:
-    query: "On January twenty-ninth, two thousand twenty-six, Amara, Amina, Carlos, Diego, Hiroshi, Lars, Leila, and Yuki went for Sushi, with Yuki covering the $280 bill."
+    query: "Amara, Carlos, and Diego had Vietnamese cuisine on the 18th of January, 2026, with a bill totaling $135 that Carlos paid."
 
 - write:
-    query: "The 24th of February 2026 found Amara, Amina, Diego, Hiroshi, Priya, and Yuki dining on Ramen, with Amara covering the $240 total."
+    query: "Carlos covered the $225 tab when he, Fatima, Hiroshi, Priya, and Yuki went out for Indian food on January 19th, 2026."
 
 - write:
-    query: "February 27th, 2026 brought Amara, Carlos, Fatima, Hiroshi, Lars, and Yuki together for Pizza, where Fatima settled the $240 bill."
+    query: "Lars picked up the $245 check on January 21, 2026, when Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki went for sushi."
 
 - write:
-    query: "March fourth, two thousand twenty-six found Carlos, Hiroshi, Priya, and Yuki dining at a Steakhouse, where Priya covered the $200 total."
+    query: "On January 28 in 2026, Amara, Amina, Carlos, Diego, Lars, Leila, and Yuki enjoyed Italian food totaling $385, with Yuki picking up the tab."
 
 - write:
-    query: "On 3/27/2026, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki dined on Italian food for $245, with Carlos covering the cost."
+    query: "Amara covered the $240 bill on 2/17/2026 when Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya went out for Thai."
 
 - write:
-    query: "On the thirtieth day of March 2026, Amara, Amina, Diego, Hiroshi, Lars, Leila, and Yuki enjoyed Vietnamese food totaling $315, with Leila footing the bill."
+    query: "Carlos and Fatima shared Thai food on 3/18/2026, and Fatima picked up the $60 check."
 
 - write:
-    query: "On the second of April 2026, Carlos, Hiroshi, and Leila had ramen costing $90, with Carlos paying the tab."
+    query: "On the 2nd of April, 2026, Carlos, Hiroshi, and Leila shared ramen totaling $90, with Carlos covering it."
 
 - write:
-    query: "On the seventh day of April 2026, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki went for sushi totaling $350, with Fatima picking up the tab."
+    query: "On the eighteenth of April in 2026, Amara, Carlos, Diego, Hiroshi, Lars, Leila, and Priya had Vietnamese food, and Hiroshi covered the $385 bill."
 
 - read:
-    query: "Exactly how many dollars is Hiroshi's current balance, using the convention that positive means others owe him and negative means he owes others?\n\nAnswer with only one signed integer: the balance in USD for the person named in the question. Sign: positive means the group owes that person (they are net owed money); negative means they owe the group. No words, no currency symbol, no explanation — just the integer."
+    query: "What type of outing did the group go on on 2026-04-18? Answer with just the outing type as it was recorded (e.g. Sushi, Pizza, Steakhouse)."
     labels:
-      single_answer: "-395"
+      single_answer: "Vietnamese"
+
+- read:
+    query: "What dates did the group go for Thai? Answer with the ISO dates (YYYY-MM-DD), comma-separated, in chronological order."
+    labels:
+      single_answer: "2026-01-17, 2026-02-17, 2026-03-18"
+
+- read:
+    query: "How many outings did Hiroshi participate in? Answer with just one non-negative integer."
+    labels:
+      single_answer: "5"
+
+- read:
+    query: "How many of the outings had a total bill that exceeded $75? Answer with just one non-negative integer."
+    labels:
+      single_answer: "9"
+
+- read:
+    query: "How much does Carlos owe or is he owed right now?\n\nAnswer with one signed integer in USD: positive if the group owes them, negative if they owe the group. Just the integer — no words, no currency symbol."
+    labels:
+      single_answer: "60"

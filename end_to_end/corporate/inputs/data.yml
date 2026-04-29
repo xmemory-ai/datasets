@@ -1,4 +1,3 @@
-# Initial state
 - write:
     query: "Alice Smith works at Globex Corp, a technology company. She is a Software Engineer in the Engineering department. Alice is assigned to project Phoenix, which was started on 2024-11-29."
 
@@ -36,8 +35,25 @@
     labels:
       single_answer: "Phoenix"
 
+- read:
+    query: "Who is not working at Initech?"
+    categories:
+      - negative_exclusion
+    labels:
+      single_answer: "Alice Smith"
+
+- read:
+    query: "How many people are not assigned to the project Phoenix?"
+    categories:
+      - aggregation
+      - negative_exclusion
+    labels:
+      single_answer: "1"
+
 - write:
     query: "Project Phoenix has announced deadline of 2026-09-03."
+    categories:
+      - field_change
 
 - read:
     query: "When is the deadline for project Phoenix?"
@@ -46,9 +62,10 @@
     labels:
       single_answer: "2026-09-03"
 
-# Temporal: happens-before
 - write:
     query: "Bob Johnson is assigned to project Astra starting from 2024-01-15 and ending on 2026-03-03."
+    categories:
+      - link_change
 
 - read:
     query: "Which project started earlier - Phoenix or Astra?"
@@ -71,9 +88,10 @@
     labels:
       single_answer: "Phoenix"
 
-# Field change — Alice gets promoted to Senior Software Engineer.
 - write:
     query: "Alice Smith has been promoted. Her new job title is Senior Software Engineer."
+    categories:
+      - field_change
 
 - read:
     query: "What is Alice Smith's current job title?"
@@ -83,23 +101,23 @@
     labels:
       single_answer: "Senior Software Engineer"
 
-# Field clearance — Alice is no longer in any department.
 - write:
     query: "Alice Smith has left the Engineering department and is no longer assigned to any department."
+    categories:
+      - field_clearance
 
-# Verify department is cleared: we ask what department, expecting no answer or "none"
 - read:
     query: "What department does Alice Smith work in?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "no department"
 
-# Link change — Alice switches from Globex Corp to Initech.
 - write:
     query: "Alice Smith no longer works at Globex Corp. She has joined Initech, a consulting company."
+    categories:
+      - link_change
 
 - read:
     query: "Which company does Alice Smith work at now?"
@@ -117,22 +135,23 @@
     labels:
       single_answer: "Globex Corp, Initech"
 
-# Link deletion — Alice is removed from project Phoenix.
 - write:
     query: "Alice Smith is no longer assigned to project Phoenix. She has been taken off the project."
+    categories:
+      - link_deletion
 
 - read:
     query: "What project is Alice Smith currently assigned to?"
     categories:
       - single_fact_lookup
       - state
-      - negative_exclusion
     labels:
       single_answer: "no project"
 
-# Company rename — Initech changes its name to Initrode.
 - write:
     query: "According to the latest news, Initech has rebranded itself and is now called Initrode. Alice Smith continues to work there."
+    categories:
+      - entity_rename
 
 - read:
     query: "Which company does Alice Smith work at now?"
@@ -152,9 +171,11 @@
     labels:
       single_answer: "Initrode"
 
-# Company dissolution.
 - write:
     query: "According to the latest news, Initrode has dissolved."
+    categories:
+      - entity_deletion
+      - link_deletion
 
 - read:
     query: "Which company does Alice Smith work at now?"
@@ -162,7 +183,6 @@
       - single_fact_lookup
       - state
       - relational
-      - negative_exclusion
     labels:
       single_answer: "unemployed"
 
@@ -172,7 +192,6 @@
       - single_fact_lookup
       - state
       - relational
-      - negative_exclusion
     labels:
       single_answer: "unemployed"
 
@@ -181,6 +200,50 @@
     categories:
       - aggregation
       - state
-      - negative_exclusion
     labels:
       single_answer: "Globex Corp"
+
+- write:
+    query: "A new company, Surge Ltd., has entered the market. Alice Smith has joined this company as a consultant."
+
+- read:
+    query: "Which company does Alice Smith work at now?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Surge Ltd."
+
+- read:
+    query: "Which active companies are out there on the market?"
+    categories:
+      - aggregation
+      - state
+    labels:
+      single_answer: "Globex Corp, Surge Ltd."
+
+- read:
+    query: "Which active companies is Bob Johnson not working at now?"
+    categories:
+      - state
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "Globex Corp, Surge Ltd."
+
+- read:
+    query: "Who has a job at the moment?"
+    categories:
+      - state
+      - relational
+    labels:
+      single_answer: "Alice Smith"
+
+- read:
+    query: "What companies has Alice Smith worked at throughout her entire career?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "Globex Corp, Initech, Surge Ltd."

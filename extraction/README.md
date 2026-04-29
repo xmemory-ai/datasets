@@ -14,7 +14,7 @@ We evaluate structured extraction on the insurance claims dataset from Cleanlab'
 
 - https://github.com/cleanlab/structured-output-benchmark
 
-Each example pairs:
+This dataset was further cleaned up to avoid incorrect and ambiguous labels. Each sample in the dataset consists of:
 
 - an insurance claim document text
 - a ground-truth structured record

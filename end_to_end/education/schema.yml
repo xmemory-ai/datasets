@@ -48,7 +48,7 @@ objects:
           - ongoing
           - completed
           - cancelled
-        description: The current status of the course.
+        description: The current status of the course. When a course is cancelled, all the students enrolled in it must be automatically unenrolled and the course should have no teacher assigned.
   School:
     description: An educational institution such as a university or school.
     fields:

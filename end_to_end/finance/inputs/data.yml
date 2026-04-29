@@ -2,7 +2,7 @@
     query: "Laura Simmons lives in Seattle and has a moderate risk profile. She holds checking account 1001-A at Pacific First Bank, which is headquartered in San Francisco."
 
 - write:
-    query: "Laura Simmons also owns a brokerage account 5500-B at Meridian Securities, headquartered in New York. Both of her accounts are currently active."
+    query: "Laura Simmons also owns a brokerage account 5500-B at Meridian Securities, a bank headquartered in New York. Both of her accounts are currently active."
 
 - write:
     query: "Mark Chen lives in Austin and has an aggressive risk profile. He holds savings account 2044-C at Pacific First Bank. The account is active."
@@ -135,12 +135,27 @@
       - field_clearance
 
 - read:
-    query: "Which sector does TSLA belong to?"
+    query: "Can AAPL's market sector be determined from the information currently on file? Answer yes or no."
     categories:
       - single_fact_lookup
       - state
     labels:
-      single_answer: "unknown"
+      single_answer: "yes"
+
+- read:
+    query: "Which sector does AAPL belong to?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "technology"
+
+- read:
+    query: "Can TSLA's market sector be determined from the information currently on file? Answer yes or no."
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "no"
 
 - read:
     query: "Which stocks currently do not belong to energy sector?"
@@ -149,7 +164,7 @@
       - state
       - negative_exclusion
     labels:
-      single_answer: "TSLA, AAPL"
+      single_answer: "AAPL"
 
 - write:
     query: "Account 2044-C has been transferred from Pacific First Bank to Summit Trust Bank, which is headquartered in Chicago."
@@ -245,12 +260,12 @@
       single_answer: "none"
 
 - read:
-    query: "Which banks are currently in operation?"
+    query: "Which banks do we have on record?"
     categories:
       - aggregation
       - state
     labels:
-      single_answer: "PF Commerce Bank"
+      single_answer: "Meridian Securities, PF Commerce Bank"
 
 - read:
     query: "Which customers currently hold accounts at PF Commerce Bank?"

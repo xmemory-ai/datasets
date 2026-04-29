@@ -113,6 +113,7 @@
     query: "What is the current dosage of Emma Davis's Atenolol prescription?"
     categories:
       - single_fact_lookup
+      - relational
       - state
     labels:
       single_answer: "100mg"

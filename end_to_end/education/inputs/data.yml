@@ -252,6 +252,7 @@
     query: "Who currently teaches Linear Algebra?"
     categories:
       - single_fact_lookup
+      - relational
       - state
     labels:
       single_answer: "no teacher"
@@ -268,6 +269,7 @@
     query: "Which courses are currently active at Riverside Institute of Technology?"
     categories:
       - aggregation
+      - relational
       - state
     labels:
       single_answer: "none"

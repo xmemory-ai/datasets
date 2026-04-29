@@ -245,5 +245,6 @@
     categories:
       - aggregation
       - relational
+      - state
     labels:
-      single_answer: "Globex Corp, Initech, Surge Ltd."
+      single_answer: "Globex Corp, Initech, Initrode, Surge Ltd."

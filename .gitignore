@@ -1,0 +1,6 @@
+# Vim swap / undo / backup
+*.swp
+*.swo
+*.swn
+*.un~
+*~

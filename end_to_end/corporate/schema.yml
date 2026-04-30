@@ -1,0 +1,88 @@
+xmd_version: v1
+objects:
+  Employee:
+    description: A person who works at a company.
+    fields:
+      full_name:
+        type: str
+        required: true
+        description: The full name of the employee.
+      job_title:
+        type: str
+        required: false
+        description: The current job title or role of the employee.
+      department:
+        type: str
+        required: false
+        description: The department the employee works in.
+    primary_key:
+    - full_name
+  Company:
+    description: A company or organization.
+    fields:
+      company_name:
+        type: str
+        required: true
+        description: The official name of the company.
+      industry:
+        type: str
+        required: false
+        description: The industry or sector the company operates in.
+    primary_key:
+    - company_name
+  Project:
+    description: A project or initiative that an employee works on.
+    fields:
+      project_name:
+        type: str
+        required: true
+        description: The name of the project. Do not include "project" in the name unless it is part of the official name.
+      project_start:
+        type: str
+        required: false
+        description: The start date of the project in format YYYY-MM-DD.
+      project_end:
+        type: str
+        required: false
+        description: End date of the project in format YYYY-MM-DD.
+      status:
+        type: str
+        required: false
+        enum:
+          - active
+          - completed
+          - cancelled
+        description: The current status of the project, such as active, completed, or cancelled.
+    primary_key:
+    - project_name
+relations:
+  EmploymentRelation:
+    description: Represents that an employee works at a company.
+    objects:
+      employee:
+        type: Employee
+        on_delete: cascade
+        description: The employee who works at the company.
+      company:
+        type: Company
+        on_delete: cascade
+        description: The company where the employee works.
+    keys:
+      unique_key:
+      - employee
+      - company
+  ProjectAssignment:
+    description: Represents that an employee is assigned to a project.
+    objects:
+      employee:
+        type: Employee
+        on_delete: cascade
+        description: The employee assigned to the project.
+      project:
+        type: Project
+        on_delete: cascade
+        description: The project the employee is assigned to.
+    keys:
+      unique_key:
+      - employee
+      - project

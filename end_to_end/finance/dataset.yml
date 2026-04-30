@@ -1,0 +1,7 @@
+name: "End-to-end test in finance domain - accounts, transactions, budgets and reports."
+author: AlexG
+created_at: 2026-04-21
+inputs:
+  - data.yml
+scenario:
+  passthrough_yml:

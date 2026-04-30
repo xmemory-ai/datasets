@@ -1,0 +1,14 @@
+name: "xmemory extraction benchmark for insurance claims from cleanlab (fixed labels)."
+author: AlexG
+created_at: 2026-02-09
+
+inputs:
+  - insurance_claims_extraction.csv
+  
+schema_path:
+  schema.json
+
+scenario:
+  structured_output_cleanlab:
+    text_column_name: claim_text
+    ground_truth_column_name: ground_truth

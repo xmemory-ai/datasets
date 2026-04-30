@@ -1,0 +1,54 @@
+- write:
+    query: "On January 16, 2026, Amina, Carlos, Diego, Lars, Leila, Priya, and Yuki enjoyed Mexican food with a total of $280, which Lars covered."
+
+- write:
+    query: "Diego covered the check for $240 on January 30, 2026, when Amina, Carlos, Diego, Fatima, Lars, and Yuki had barbecue."
+
+- write:
+    query: "Hiroshi picked up the $280 tab on 2026-02-02 when Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Priya enjoyed Indian cuisine."
+
+- write:
+    query: "Leila paid the $400 bill on the 11th day of February in 2026 for pizza shared by Amara, Amina, Carlos, Fatima, Hiroshi, Lars, Leila, and Yuki."
+
+- write:
+    query: "Carlos picked up the $210 tab on the 19th of February, 2026, when Amara, Amina, Carlos, Diego, Fatima, and Hiroshi had Thai food."
+
+- write:
+    query: "On March 7th, 2026, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, and Yuki shared an Indian dinner totaling $200, with Diego covering the bill."
+
+- write:
+    query: "Amina, Carlos, Diego, Fatima, and Lars shared pizza on March 28, 2026, and Amina paid the $125 bill."
+
+- write:
+    query: "On 4/4/2026, Amina, Carlos, Diego, Fatima, and Yuki had Mexican food totaling $175, and Diego picked up the tab."
+
+- write:
+    query: "Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Leila, and Priya enjoyed pizza on April 11th, 2026, with Diego taking the $400 check."
+
+- write:
+    query: "On the 14th of April, 2026, Amara, Amina, Carlos, Fatima, Hiroshi, and Yuki dined at a steakhouse, and Fatima picked up the $180 tab."
+
+- read:
+    query: "What type of outing did the group go on on 2026-04-14? Answer with just the outing type as it was recorded (e.g. Sushi, Pizza, Steakhouse)."
+    labels:
+      single_answer: "Steakhouse"
+
+- read:
+    query: "What dates did the group go for Mexican? Answer with the ISO dates (YYYY-MM-DD), comma-separated, in chronological order."
+    labels:
+      single_answer: "2026-01-16, 2026-04-04"
+
+- read:
+    query: "How many outings did Hiroshi participate in? Answer with just one non-negative integer."
+    labels:
+      single_answer: "6"
+
+- read:
+    query: "How many of the outings had a total bill that exceeded $300? Answer with just one non-negative integer."
+    labels:
+      single_answer: "2"
+
+- read:
+    query: "What's Amina's current balance in the group?\n\nAnswer with one signed integer in USD: positive if the group owes them, negative if they owe the group. Just the integer — no words, no currency symbol."
+    labels:
+      single_answer: "-240"

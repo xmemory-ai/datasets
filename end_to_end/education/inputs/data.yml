@@ -1,0 +1,285 @@
+- write:
+    query: "Maria Rodriguez is a sophomore majoring in Computer Science. She attends Riverside University, located in Chicago."
+
+- write:
+    query: "Maria Rodriguez is enrolled in Intro to Algorithms for the Fall 2025 term, and that course is currently ongoing."
+
+- write:
+    query: "Professor Alan Whitaker, an associate professor whose subject area is Computer Science, teaches Intro to Algorithms."
+
+- write:
+    query: "Daniel Park is a junior majoring in Mathematics. He also attends Riverside University."
+
+- write:
+    query: "Daniel Park is enrolled in Linear Algebra for the Fall 2025 term, which is ongoing. Dr. Nina Fischer, a lecturer in Mathematics, teaches Linear Algebra."
+
+- read:
+    query: "What is Maria Rodriguez's major?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "Computer Science"
+
+- read:
+    query: "What grade level is Maria Rodriguez in?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "sophomore"
+
+- read:
+    query: "Which school does Maria Rodriguez attend?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Riverside University"
+
+- read:
+    query: "Which course is Maria Rodriguez enrolled in?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Intro to Algorithms"
+
+- read:
+    query: "Who teaches Intro to Algorithms?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Professor Alan Whitaker"
+
+- read:
+    query: "What is Professor Alan Whitaker's academic title?"
+    categories:
+      - single_fact_lookup
+    labels:
+      single_answer: "associate professor"
+
+- read:
+    query: "Who teaches Linear Algebra?"
+    categories:
+      - single_fact_lookup
+      - relational
+    labels:
+      single_answer: "Dr. Nina Fischer"
+
+- read:
+    query: "How many students attend Riverside University?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "2"
+
+- read:
+    query: "Which courses are currently being taught at Riverside University?"
+    categories:
+      - aggregation
+      - relational
+    labels:
+      single_answer: "Intro to Algorithms, Linear Algebra"
+
+- read:
+    query: "Which professors are currently not teaching at Riverside University?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "none"
+
+- write:
+    query: "The Fall 2025 term has ended. Intro to Algorithms has been marked as completed."
+    categories:
+      - field_change
+
+- read:
+    query: "What is the current status of Intro to Algorithms?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "completed"
+
+- write:
+    query: "Professor Alan Whitaker has been promoted. His new title is full professor."
+    categories:
+      - field_change
+
+- read:
+    query: "What is Professor Alan Whitaker's current title?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "full professor"
+
+- read:
+    query: "Which professors do not have the title of full professor?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "Dr. Nina Fischer"
+
+- write:
+    query: "Maria Rodriguez has advanced a grade. She is now a junior."
+    categories:
+      - field_change
+
+- read:
+    query: "What grade level is Maria Rodriguez now in?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "junior"
+
+- write:
+    query: "Daniel Park has decided to drop his major and is currently undeclared. His major is no longer on file."
+    categories:
+      - field_clearance
+
+- read:
+    query: "What is Daniel Park's major?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "undeclared"
+
+- read:
+    query: "Which students currently do not have a declared major?"
+    categories:
+      - aggregation
+      - relational
+      - negative_exclusion
+    labels:
+      single_answer: "Daniel Park"
+
+- write:
+    query: "Daniel Park has dropped Linear Algebra and enrolled instead in Real Analysis for the Spring 2026 term. Real Analysis is currently ongoing and is taught by Dr. Nina Fischer."
+    categories:
+      - link_change
+
+- read:
+    query: "Which course is Daniel Park currently enrolled in?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Real Analysis"
+
+- read:
+    query: "How many students are currently enrolled in Linear Algebra?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "0"
+
+- write:
+    query: "Maria Rodriguez has withdrawn from Intro to Algorithms and is no longer enrolled in it."
+    categories:
+      - link_deletion
+
+- read:
+    query: "Which course is Maria Rodriguez currently enrolled in?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "none"
+
+- write:
+    query: "Riverside University has officially changed its name to Riverside Institute of Technology."
+    categories:
+      - entity_rename
+
+- read:
+    query: "Which school does Maria Rodriguez now attend?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Riverside Institute of Technology"
+
+- read:
+    query: "Which school does Daniel Park now attend?"
+    categories:
+      - single_fact_lookup
+      - state
+      - relational
+    labels:
+      single_answer: "Riverside Institute of Technology"
+
+- write:
+    query: "Real Analysis has been cancelled due to low enrollment."
+    categories:
+      - field_change
+      - link_deletion
+
+- read:
+    query: "What is the current status of Real Analysis?"
+    categories:
+      - single_fact_lookup
+      - state
+    labels:
+      single_answer: "cancelled"
+
+- read:
+    query: "Which ongoing courses is Daniel Park currently enrolled in?"
+    categories:
+      - single_fact_lookup
+      - relational
+      - state
+    labels:
+      single_answer: "none"
+
+- write:
+    query: "Dr. Nina Fischer has resigned from the faculty and is no longer teaching any courses."
+    categories:
+      - entity_deletion
+      - link_deletion
+
+- read:
+    query: "Who currently teaches Linear Algebra?"
+    categories:
+      - single_fact_lookup
+      - relational
+      - state
+    labels:
+      single_answer: "no teacher"
+
+- read:
+    query: "Which teachers are currently on the faculty?"
+    categories:
+      - aggregation
+      - state
+    labels:
+      single_answer: "Professor Alan Whitaker"
+
+- read:
+    query: "Which courses are currently active at Riverside Institute of Technology?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "none"
+
+- read:
+    query: "Which courses has Daniel Park ever attended?"
+    categories:
+      - aggregation
+      - relational
+      - state
+    labels:
+      single_answer: "Linear Algebra, Real Analysis"

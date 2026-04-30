@@ -1,0 +1,100 @@
+{"date_iso": "2026-01-15", "type": "Steakhouse", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Hiroshi", "Leila", "Priya", "Yuki"], "total_usd": 160, "payer": "Carlos"}
+{"date_iso": "2026-01-16", "type": "Mexican", "attendees": ["Amina", "Carlos", "Diego", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 280, "payer": "Lars"}
+{"date_iso": "2026-01-17", "type": "Thai", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Leila", "Priya"], "total_usd": 175, "payer": "Fatima"}
+{"date_iso": "2026-01-18", "type": "Vietnamese", "attendees": ["Amara", "Carlos", "Diego"], "total_usd": 135, "payer": "Carlos"}
+{"date_iso": "2026-01-19", "type": "Indian", "attendees": ["Carlos", "Fatima", "Hiroshi", "Priya", "Yuki"], "total_usd": 225, "payer": "Carlos"}
+{"date_iso": "2026-01-20", "type": "Pizza", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Lars", "Priya"], "total_usd": 210, "payer": "Priya"}
+{"date_iso": "2026-01-21", "type": "Sushi", "attendees": ["Amina", "Carlos", "Fatima", "Hiroshi", "Lars", "Priya", "Yuki"], "total_usd": 245, "payer": "Lars"}
+{"date_iso": "2026-01-22", "type": "Barbecue", "attendees": ["Carlos", "Diego", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 175, "payer": "Yuki"}
+{"date_iso": "2026-01-23", "type": "Pizza", "attendees": ["Amara", "Carlos", "Yuki"], "total_usd": 75, "payer": "Yuki"}
+{"date_iso": "2026-01-24", "type": "Sushi", "attendees": ["Hiroshi", "Yuki"], "total_usd": 120, "payer": "Hiroshi"}
+{"date_iso": "2026-01-25", "type": "Vietnamese", "attendees": ["Amara", "Diego", "Fatima", "Priya", "Yuki"], "total_usd": 100, "payer": "Priya"}
+{"date_iso": "2026-01-26", "type": "Mexican", "attendees": ["Amina", "Carlos", "Hiroshi", "Leila", "Yuki"], "total_usd": 200, "payer": "Carlos"}
+{"date_iso": "2026-01-27", "type": "Italian", "attendees": ["Amara", "Fatima", "Hiroshi", "Lars", "Priya", "Yuki"], "total_usd": 330, "payer": "Priya"}
+{"date_iso": "2026-01-28", "type": "Italian", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Lars", "Leila", "Yuki"], "total_usd": 385, "payer": "Yuki"}
+{"date_iso": "2026-01-29", "type": "Sushi", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 280, "payer": "Yuki"}
+{"date_iso": "2026-01-30", "type": "Barbecue", "attendees": ["Amina", "Carlos", "Diego", "Fatima", "Lars", "Yuki"], "total_usd": 240, "payer": "Diego"}
+{"date_iso": "2026-01-31", "type": "Barbecue", "attendees": ["Amina", "Hiroshi", "Priya"], "total_usd": 150, "payer": "Amina"}
+{"date_iso": "2026-02-01", "type": "Barbecue", "attendees": ["Amina", "Fatima"], "total_usd": 80, "payer": "Fatima"}
+{"date_iso": "2026-02-02", "type": "Indian", "attendees": ["Amara", "Amina", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 280, "payer": "Hiroshi"}
+{"date_iso": "2026-02-03", "type": "Italian", "attendees": ["Fatima", "Hiroshi", "Yuki"], "total_usd": 105, "payer": "Hiroshi"}
+{"date_iso": "2026-02-04", "type": "Italian", "attendees": ["Amara", "Amina", "Carlos", "Fatima", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 400, "payer": "Yuki"}
+{"date_iso": "2026-02-05", "type": "Indian", "attendees": ["Amara", "Amina", "Carlos"], "total_usd": 90, "payer": "Amina"}
+{"date_iso": "2026-02-06", "type": "Sushi", "attendees": ["Amina", "Carlos", "Diego", "Lars", "Yuki"], "total_usd": 200, "payer": "Amina"}
+{"date_iso": "2026-02-07", "type": "Italian", "attendees": ["Amina", "Diego", "Fatima", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 210, "payer": "Fatima"}
+{"date_iso": "2026-02-08", "type": "Steakhouse", "attendees": ["Amina", "Carlos", "Diego", "Fatima", "Lars", "Leila", "Yuki"], "total_usd": 420, "payer": "Diego"}
+{"date_iso": "2026-02-09", "type": "Mexican", "attendees": ["Carlos", "Diego", "Fatima"], "total_usd": 180, "payer": "Fatima"}
+{"date_iso": "2026-02-10", "type": "Sushi", "attendees": ["Amara", "Amina", "Diego", "Priya", "Yuki"], "total_usd": 100, "payer": "Priya"}
+{"date_iso": "2026-02-11", "type": "Pizza", "attendees": ["Amara", "Amina", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 400, "payer": "Leila"}
+{"date_iso": "2026-02-12", "type": "Ramen", "attendees": ["Amara", "Carlos", "Lars", "Leila", "Priya"], "total_usd": 150, "payer": "Lars"}
+{"date_iso": "2026-02-13", "type": "Indian", "attendees": ["Amina", "Carlos", "Fatima", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 420, "payer": "Fatima"}
+{"date_iso": "2026-02-14", "type": "Thai", "attendees": ["Amina", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 240, "payer": "Amina"}
+{"date_iso": "2026-02-15", "type": "Ramen", "attendees": ["Diego", "Lars", "Leila", "Priya"], "total_usd": 200, "payer": "Diego"}
+{"date_iso": "2026-02-16", "type": "Thai", "attendees": ["Diego", "Fatima"], "total_usd": 60, "payer": "Diego"}
+{"date_iso": "2026-02-17", "type": "Thai", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Hiroshi", "Leila", "Priya"], "total_usd": 240, "payer": "Amara"}
+{"date_iso": "2026-02-18", "type": "Barbecue", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 400, "payer": "Amara"}
+{"date_iso": "2026-02-19", "type": "Thai", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Hiroshi"], "total_usd": 210, "payer": "Carlos"}
+{"date_iso": "2026-02-20", "type": "Ramen", "attendees": ["Amara", "Amina", "Diego", "Fatima", "Hiroshi", "Priya"], "total_usd": 150, "payer": "Diego"}
+{"date_iso": "2026-02-21", "type": "Italian", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Lars", "Leila", "Priya"], "total_usd": 280, "payer": "Leila"}
+{"date_iso": "2026-02-22", "type": "Italian", "attendees": ["Amara", "Carlos", "Lars", "Priya"], "total_usd": 160, "payer": "Lars"}
+{"date_iso": "2026-02-23", "type": "Ramen", "attendees": ["Amina", "Carlos", "Diego", "Hiroshi", "Lars"], "total_usd": 175, "payer": "Diego"}
+{"date_iso": "2026-02-24", "type": "Ramen", "attendees": ["Amara", "Amina", "Diego", "Hiroshi", "Priya", "Yuki"], "total_usd": 240, "payer": "Amara"}
+{"date_iso": "2026-02-25", "type": "Pizza", "attendees": ["Diego", "Yuki"], "total_usd": 60, "payer": "Diego"}
+{"date_iso": "2026-02-26", "type": "Thai", "attendees": ["Amara", "Carlos", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 210, "payer": "Yuki"}
+{"date_iso": "2026-02-27", "type": "Pizza", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Lars", "Yuki"], "total_usd": 240, "payer": "Fatima"}
+{"date_iso": "2026-02-28", "type": "Vietnamese", "attendees": ["Carlos", "Lars", "Leila"], "total_usd": 180, "payer": "Leila"}
+{"date_iso": "2026-03-01", "type": "Thai", "attendees": ["Amara", "Amina", "Hiroshi", "Lars", "Yuki"], "total_usd": 200, "payer": "Amina"}
+{"date_iso": "2026-03-02", "type": "Thai", "attendees": ["Amina", "Carlos", "Diego", "Lars", "Yuki"], "total_usd": 300, "payer": "Yuki"}
+{"date_iso": "2026-03-03", "type": "Sushi", "attendees": ["Amara", "Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 210, "payer": "Leila"}
+{"date_iso": "2026-03-04", "type": "Steakhouse", "attendees": ["Carlos", "Hiroshi", "Priya", "Yuki"], "total_usd": 200, "payer": "Priya"}
+{"date_iso": "2026-03-05", "type": "Mexican", "attendees": ["Amara", "Amina", "Fatima", "Hiroshi", "Lars", "Priya"], "total_usd": 330, "payer": "Fatima"}
+{"date_iso": "2026-03-06", "type": "Thai", "attendees": ["Amara", "Amina", "Carlos", "Fatima", "Hiroshi", "Leila", "Priya", "Yuki"], "total_usd": 400, "payer": "Priya"}
+{"date_iso": "2026-03-07", "type": "Indian", "attendees": ["Amina", "Carlos", "Diego", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 200, "payer": "Diego"}
+{"date_iso": "2026-03-08", "type": "Pizza", "attendees": ["Amina", "Carlos", "Fatima", "Hiroshi", "Lars"], "total_usd": 125, "payer": "Carlos"}
+{"date_iso": "2026-03-09", "type": "Steakhouse", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 420, "payer": "Priya"}
+{"date_iso": "2026-03-10", "type": "Italian", "attendees": ["Amara", "Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 420, "payer": "Diego"}
+{"date_iso": "2026-03-11", "type": "Sushi", "attendees": ["Carlos", "Yuki"], "total_usd": 90, "payer": "Carlos"}
+{"date_iso": "2026-03-12", "type": "Steakhouse", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Hiroshi", "Lars", "Priya"], "total_usd": 320, "payer": "Fatima"}
+{"date_iso": "2026-03-13", "type": "Steakhouse", "attendees": ["Amara", "Yuki"], "total_usd": 50, "payer": "Yuki"}
+{"date_iso": "2026-03-14", "type": "Vietnamese", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 280, "payer": "Leila"}
+{"date_iso": "2026-03-15", "type": "Mexican", "attendees": ["Amara", "Amina", "Lars", "Leila", "Yuki"], "total_usd": 100, "payer": "Amara"}
+{"date_iso": "2026-03-16", "type": "Mexican", "attendees": ["Amara", "Priya", "Yuki"], "total_usd": 150, "payer": "Priya"}
+{"date_iso": "2026-03-17", "type": "Italian", "attendees": ["Amina", "Fatima", "Lars", "Yuki"], "total_usd": 220, "payer": "Lars"}
+{"date_iso": "2026-03-18", "type": "Thai", "attendees": ["Carlos", "Fatima"], "total_usd": 60, "payer": "Fatima"}
+{"date_iso": "2026-03-19", "type": "Barbecue", "attendees": ["Amara", "Amina", "Carlos", "Hiroshi", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 240, "payer": "Yuki"}
+{"date_iso": "2026-03-20", "type": "Mexican", "attendees": ["Amara", "Fatima"], "total_usd": 70, "payer": "Amara"}
+{"date_iso": "2026-03-21", "type": "Vietnamese", "attendees": ["Amara", "Amina", "Diego", "Hiroshi", "Lars", "Priya", "Yuki"], "total_usd": 245, "payer": "Amina"}
+{"date_iso": "2026-03-22", "type": "Sushi", "attendees": ["Amara", "Diego", "Fatima", "Hiroshi", "Leila", "Priya", "Yuki"], "total_usd": 210, "payer": "Fatima"}
+{"date_iso": "2026-03-23", "type": "Indian", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Leila", "Priya"], "total_usd": 240, "payer": "Hiroshi"}
+{"date_iso": "2026-03-24", "type": "Sushi", "attendees": ["Amina", "Diego", "Hiroshi", "Leila"], "total_usd": 180, "payer": "Amina"}
+{"date_iso": "2026-03-25", "type": "Barbecue", "attendees": ["Amara", "Carlos", "Diego", "Fatima", "Lars", "Priya", "Yuki"], "total_usd": 245, "payer": "Lars"}
+{"date_iso": "2026-03-26", "type": "Sushi", "attendees": ["Amara", "Amina"], "total_usd": 90, "payer": "Amara"}
+{"date_iso": "2026-03-27", "type": "Italian", "attendees": ["Carlos", "Diego", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 245, "payer": "Carlos"}
+{"date_iso": "2026-03-28", "type": "Pizza", "attendees": ["Amina", "Carlos", "Diego", "Fatima", "Lars"], "total_usd": 125, "payer": "Amina"}
+{"date_iso": "2026-03-29", "type": "Ramen", "attendees": ["Amina", "Carlos", "Diego", "Priya", "Yuki"], "total_usd": 175, "payer": "Carlos"}
+{"date_iso": "2026-03-30", "type": "Vietnamese", "attendees": ["Amara", "Amina", "Diego", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 315, "payer": "Leila"}
+{"date_iso": "2026-03-31", "type": "Steakhouse", "attendees": ["Amara", "Amina", "Diego", "Hiroshi", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 440, "payer": "Lars"}
+{"date_iso": "2026-04-01", "type": "Barbecue", "attendees": ["Lars", "Leila"], "total_usd": 80, "payer": "Lars"}
+{"date_iso": "2026-04-02", "type": "Ramen", "attendees": ["Carlos", "Hiroshi", "Leila"], "total_usd": 90, "payer": "Carlos"}
+{"date_iso": "2026-04-03", "type": "Sushi", "attendees": ["Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 385, "payer": "Carlos"}
+{"date_iso": "2026-04-04", "type": "Mexican", "attendees": ["Amina", "Carlos", "Diego", "Fatima", "Yuki"], "total_usd": 175, "payer": "Diego"}
+{"date_iso": "2026-04-05", "type": "Barbecue", "attendees": ["Amara", "Diego", "Fatima", "Hiroshi", "Leila"], "total_usd": 250, "payer": "Hiroshi"}
+{"date_iso": "2026-04-06", "type": "Indian", "attendees": ["Amina", "Carlos", "Lars", "Leila", "Priya"], "total_usd": 275, "payer": "Lars"}
+{"date_iso": "2026-04-07", "type": "Sushi", "attendees": ["Amina", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 350, "payer": "Fatima"}
+{"date_iso": "2026-04-08", "type": "Italian", "attendees": ["Amara", "Amina", "Leila", "Priya", "Yuki"], "total_usd": 225, "payer": "Amina"}
+{"date_iso": "2026-04-09", "type": "Steakhouse", "attendees": ["Amina", "Carlos", "Fatima", "Lars", "Leila", "Priya", "Yuki"], "total_usd": 210, "payer": "Yuki"}
+{"date_iso": "2026-04-10", "type": "Indian", "attendees": ["Amara", "Amina", "Fatima", "Hiroshi", "Leila", "Priya", "Yuki"], "total_usd": 280, "payer": "Leila"}
+{"date_iso": "2026-04-11", "type": "Pizza", "attendees": ["Amara", "Amina", "Carlos", "Diego", "Fatima", "Hiroshi", "Leila", "Priya"], "total_usd": 400, "payer": "Diego"}
+{"date_iso": "2026-04-12", "type": "Pizza", "attendees": ["Hiroshi", "Lars", "Priya"], "total_usd": 120, "payer": "Lars"}
+{"date_iso": "2026-04-13", "type": "Mexican", "attendees": ["Amara", "Carlos", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 385, "payer": "Fatima"}
+{"date_iso": "2026-04-14", "type": "Steakhouse", "attendees": ["Amara", "Amina", "Carlos", "Fatima", "Hiroshi", "Yuki"], "total_usd": 180, "payer": "Fatima"}
+{"date_iso": "2026-04-15", "type": "Barbecue", "attendees": ["Amara", "Amina", "Diego", "Fatima", "Lars", "Yuki"], "total_usd": 180, "payer": "Fatima"}
+{"date_iso": "2026-04-16", "type": "Sushi", "attendees": ["Diego", "Leila", "Yuki"], "total_usd": 165, "payer": "Diego"}
+{"date_iso": "2026-04-17", "type": "Pizza", "attendees": ["Diego", "Lars", "Leila", "Priya"], "total_usd": 200, "payer": "Leila"}
+{"date_iso": "2026-04-18", "type": "Vietnamese", "attendees": ["Amara", "Carlos", "Diego", "Hiroshi", "Lars", "Leila", "Priya"], "total_usd": 385, "payer": "Hiroshi"}
+{"date_iso": "2026-04-19", "type": "Vietnamese", "attendees": ["Amara", "Diego"], "total_usd": 90, "payer": "Diego"}
+{"date_iso": "2026-04-20", "type": "Ramen", "attendees": ["Amara", "Carlos", "Diego", "Fatima", "Hiroshi", "Lars", "Leila", "Yuki"], "total_usd": 200, "payer": "Fatima"}
+{"date_iso": "2026-04-21", "type": "Pizza", "attendees": ["Carlos", "Hiroshi", "Lars"], "total_usd": 135, "payer": "Lars"}
+{"date_iso": "2026-04-22", "type": "Vietnamese", "attendees": ["Carlos", "Diego", "Fatima", "Lars", "Priya", "Yuki"], "total_usd": 150, "payer": "Fatima"}
+{"date_iso": "2026-04-23", "type": "Italian", "attendees": ["Carlos", "Hiroshi", "Lars"], "total_usd": 150, "payer": "Lars"}
+{"date_iso": "2026-04-24", "type": "Vietnamese", "attendees": ["Amara", "Diego", "Hiroshi", "Leila", "Yuki"], "total_usd": 100, "payer": "Amara"}

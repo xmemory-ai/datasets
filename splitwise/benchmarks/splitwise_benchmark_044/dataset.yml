@@ -1,0 +1,11 @@
+name: "Splitwise benchmark dataset generated from fulltest.json"
+author: "DimaK"
+created_at: 2026-04-27
+inputs:
+  - data.yml
+scenario:
+  passthrough_yml: {}
+instance_setup:
+  from_plaintext_description:
+    description: |-
+      This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing we record who attended, the total bill in dollars, and who paid; the total is split evenly across everyone who attended that outing, so each attendee owes the payer an equal share of the bill, and this even-split assumption is how we reason about who owes whom. If an expense message does not explicitly name which subset attended, assume the full group of all 10 people participated. Every outing's date must be stored as a dash-separated ISO calendar date in the form YYYY-MM-DD (for example 2026-01-15) regardless of how the message phrases it, because later questions will look up outings by date; outings at the same location or of the same type on different calendar dates are distinct outings and must never be merged.

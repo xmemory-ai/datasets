@@ -1,0 +1,54 @@
+- write:
+    query: "Carlos covered the $225 tab when he, Fatima, Hiroshi, Priya, and Yuki went out for Indian food on January 19th, 2026."
+
+- write:
+    query: "Lars picked up the $245 check on January 21, 2026, when Amina, Carlos, Fatima, Hiroshi, Lars, Priya, and Yuki went for sushi."
+
+- write:
+    query: "On the 25th of January in 2026, Amara, Diego, Fatima, Priya, and Yuki had Vietnamese food for $100, and Priya took the check."
+
+- write:
+    query: "Lars picked up the tab for $150 on February 12th, 2026, when Amara, Carlos, Lars, Leila, and Priya had ramen together."
+
+- write:
+    query: "Fatima settled the $330 check on March 5, 2026, when Amara, Amina, Fatima, Hiroshi, Lars, and Priya enjoyed Mexican cuisine."
+
+- write:
+    query: "On 2026-03-22, Amara, Diego, Fatima, Hiroshi, Leila, Priya, and Yuki enjoyed sushi, and Fatima took the $210 tab."
+
+- write:
+    query: "Amara, Carlos, Fatima, Hiroshi, Leila, and Priya dined on Indian food on March 23, 2026, with Hiroshi covering the $240 check."
+
+- write:
+    query: "On 2026-04-08, Amara, Amina, Leila, Priya, and Yuki dined on Italian food, and Amina covered the $225 bill."
+
+- write:
+    query: "April 9, 2026 saw Amina, Carlos, Fatima, Lars, Leila, Priya, and Yuki at a steakhouse where Yuki picked up the $210 tab."
+
+- write:
+    query: "On 4/12/2026, Hiroshi, Lars, and Priya shared pizza, and Lars covered the $120 bill."
+
+- read:
+    query: "What type of outing did the group go on on 2026-01-25? Answer with just the outing type as it was recorded (e.g. Sushi, Pizza, Steakhouse)."
+    labels:
+      single_answer: "Vietnamese"
+
+- read:
+    query: "What dates did the group go for Sushi? Answer with the ISO dates (YYYY-MM-DD), comma-separated, in chronological order."
+    labels:
+      single_answer: "2026-01-21, 2026-03-22"
+
+- read:
+    query: "How many outings did Amara participate in? Answer with just one non-negative integer."
+    labels:
+      single_answer: "6"
+
+- read:
+    query: "How many of the outings had a total bill that exceeded $242? Answer with just one non-negative integer."
+    labels:
+      single_answer: "2"
+
+- read:
+    query: "What's the current balance for Priya?\n\nAnswer with one signed integer in USD: positive if the group owes them, negative if they owe the group. Just the integer — no words, no currency symbol."
+    labels:
+      single_answer: "-270"

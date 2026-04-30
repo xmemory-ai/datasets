@@ -1,0 +1,11 @@
+name: "Splitwise benchmark dataset generated from fulltest.json"
+author: "DimaK"
+created_at: 2026-04-27
+inputs:
+  - data.yml
+scenario:
+  passthrough_yml: {}
+instance_setup:
+  from_plaintext_description:
+    description: |-
+      This agent tracks shared outings for a fixed group of 10 people: Amara, Amina, Carlos, Diego, Fatima, Hiroshi, Lars, Leila, Priya, and Yuki. For each outing, record who participated, the total bill in dollars, and who paid the full bill. The accounting model is an even split: the total is divided equally across everyone who attended that outing, so the payer advanced the full amount and each other participant owes the payer their equal share of that bill. When an expense message does not spell out exactly which subset attended, assume the full group (all 10 people) participated unless explicitly stated otherwise. Outings at the same location or of the same type on different calendar dates are distinct outings and must never be merged. Store every outing's date in the database as a dash-separated ISO calendar date in the form YYYY-MM-DD (for example, 2026-01-15), regardless of how the source message phrases the date, because later questions will look up outings by date. Follow-up questions about balances or who owes what will be grounded in this even-split rule.
